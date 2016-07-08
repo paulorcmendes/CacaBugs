@@ -6,8 +6,6 @@ function openCode(language){
        x[i].style.display = "none";
     }
     document.getElementById(language).style.display = "block";
-
-
 }
 
 function test(){
@@ -77,8 +75,7 @@ function loadXMLDoc(dname){
 }
 function myFunction() {
 	var x;
-	window.alert("aa");
-    var xmlDoc = loadXMLDoc("https://dl.dropboxusercontent.com/u/85412057/questions.xml"); 
+    var xmlDoc = loadXMLDoc("https://raw.githubusercontent.com/paulorcmendes/CacaBugs/master/questions.xml?token=AIO7ytiCJqV0tcjswYbmHUuBonFiFPHiks5XiOlWwA%3D%3D"); 
     x = xmlDoc.getElementsByTagName("question")[0].childNodes[0].nodeValue;
     document.getElementById("demo").innerHTML = x;	    
 
