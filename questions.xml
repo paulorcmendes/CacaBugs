@@ -2,14 +2,30 @@
 <dataBase>	
 	<question>
 		<description>
-
+		O código abaixo deveria retornar o maior dentre três números inteiros. Entretanto, há um erro. Você consegue inserir entradas que façam o código retornar uma resposta errada?
 		</description>
 		<code language = 'c'>
-			
+		int max3(int a, int b, int c){
+			if (a>b && a>c){
+				return a;
+			}else if(b>a && b>c){
+				return b;
+			}else{
+				return c;
+			}
+		}			
 		</code>
 
 		<code language = 'lua'>
-			
+		function max3(a, b, c)
+			if a>b and a>c then
+				return a
+			elseif b>a and b>c then
+				return b
+			else
+				return c
+			end
+		end
 		</code>
 		<entry type = 'int'>A</entry>
 		<entry type = 'int'>B</entry>
