@@ -2,6 +2,7 @@ div.code{
 	border-style: transparent;
 	width: 30%;
 	float: left;
+	white-space: pre;
 }
 
 div.input{
