@@ -1,0 +1,14 @@
+div.code{
+	border-style: transparent;
+	width: 30%;
+	float: left;
+}
+
+div.input{
+	float: left;
+	margin-left: 10%;
+}
+.input input{
+	margin-bottom: 10%;
+}
+

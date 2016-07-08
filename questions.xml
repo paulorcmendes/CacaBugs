@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataBase>	
+	<question>
+		<description>
+
+		</description>
+		<code language = 'c'>
+			
+		</code>
+
+		<code language = 'lua'>
+			
+		</code>
+		<entry type = 'int'>A</entry>
+		<entry type = 'int'>B</entry>
+		<entry type = 'int'>C</entry>
+	</question>
+
+</dataBase>
+
+
