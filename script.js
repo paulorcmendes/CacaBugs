@@ -74,10 +74,14 @@ function loadXMLDoc(dname){
     return xhttp.responseXML;
 }
 function myFunction() {
+
 	var x;
-    var xmlDoc = loadXMLDoc("https://raw.githubusercontent.com/paulorcmendes/QuestionsCacaBugs/master/questions.xml"); 
-    x = xmlDoc.getElementsByTagName("question")[0].childNodes[0].nodeValue;
-    document.getElementById("demo").innerHTML = x;	    
+    var xmlDoc = loadXMLDoc("https://dl.dropboxusercontent.com/u/85412057/questions.xml"); 
+    x = xmlDoc.getElementsByTagName("dataBase")[0];
+    window.alert("edas");
+    x = x.getElementsByTagName("question")[0].childNodes[0].nodeValue;
+    document.getElementById("demo").innerHTML = x;
+
 
 }
 
