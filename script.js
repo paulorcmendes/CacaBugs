@@ -77,10 +77,16 @@ function myFunction() {
 
 	var x;
     var xmlDoc = loadXMLDoc("https://dl.dropboxusercontent.com/u/85412057/questions.xml"); 
-    x = xmlDoc.getElementsByTagName("dataBase")[0];
-    window.alert("edas");
-    x = x.getElementsByTagName("question")[0].childNodes[0].nodeValue;
-    document.getElementById("demo").innerHTML = x;
+    dataBase = xmlDoc.getElementsByTagName("dataBase")[0];
+    question = dataBase.getElementsByTagName("question")[1];
+    description = question.getElementsByTagName("description")[0].childNodes[0].nodeValue;
+    code = question.getElementsByTagName("code");
+    entry = question.getElementsByTagName("entry");
+    
+    for (var i = 0; i < code.length; i++) {
+    	window.alert(code[i].getAttribute('language'));
+    }
+    document.getElementById("demo").innerHTML = description;
 
 
 }
