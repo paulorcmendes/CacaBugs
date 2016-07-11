@@ -76,17 +76,37 @@ function loadXMLDoc(dname){
 function myFunction() {
 
 	var x;
-    var xmlDoc = loadXMLDoc("https://dl.dropboxusercontent.com/u/85412057/questions.xml"); 
+    var xmlDoc = loadXMLDoc("https://dl.dropboxusercontent.com/u/85412057/question.xml"); 
     dataBase = xmlDoc.getElementsByTagName("dataBase")[0];
     question = dataBase.getElementsByTagName("question")[1];
     description = question.getElementsByTagName("description")[0].childNodes[0].nodeValue;
     code = question.getElementsByTagName("code");
     entry = question.getElementsByTagName("entry");
     
+    
+    html = "<div class = \"desc\">"+description+"</div>";
+    html+= "<div class=\"tabs\">"
     for (var i = 0; i < code.length; i++) {
-    	window.alert(code[i].getAttribute('language'));
+    	html+= "<a href=\"#\" onclick=\"openCode('"+code[i].getAttribute('language')+"');\">"+code[i].getAttribute('language')+"</a>";
     }
-    document.getElementById("demo").innerHTML = description;
+    html+= "</div>"
+
+
+    for (var i = 0; i < code.length; i++) {
+    	html+= "<div id = \""+code[i].getAttribute('language')+"\" class=\"code\" >";
+    	html+= code[i].childNodes[0].nodeValue;
+    	html+="</div>";
+    }
+
+    html += "<div class=\"input\">";
+    for (var i = 0; i < entry.length; i++) {
+    	html+= "<label>"+entry[i].childNodes[0].nodeValue+"</label>";
+    	html+= "<input type=\"text\" class = \"variableInput\" id=\"txt"+entry[i].childNodes[0].nodeValue+"\"><br>";
+    }
+    html += "<input type=\"submit\" value=\"Submit\" onclick=\"test();\">";
+    html += "</div>"
+   
+    document.getElementById("question").innerHTML = html;
 
 
 }

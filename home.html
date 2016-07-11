@@ -8,15 +8,16 @@
 
 </head>
 <body onload="openCode('lua')">
-	<div class="desc">
-	O código abaixo deveria retornar o maior dentre três números inteiros. Entretanto, há um erro. Você consegue inserir entradas que façam o código retornar uma resposta errada?
-	</div>
-	<div class="tabs">
-		<a href="#" onclick="openCode('lua');">Lua</a>
-		<a href="#" onclick="openCode('c');">C</a>
-	</div>
-	
-	<div id = "lua" class="code">
+	<div id = "question">
+		<div class="desc">
+		O código abaixo deveria retornar o maior dentre três números inteiros. Entretanto, há um erro. Você consegue inserir entradas que façam o código retornar uma resposta errada?
+		</div>
+		<div class="tabs">
+			<a href="#" onclick="openCode('lua');">Lua</a>
+			<a href="#" onclick="openCode('c');">C</a>
+		</div>
+		
+		<div id = "lua" class="code">
 function max3(a, b, c)
 	if a>b and a>c then
 		return a
@@ -26,9 +27,9 @@ function max3(a, b, c)
 		return c
 	end
 end		
-	</div>
+		</div>
 
-	<div id = "c" class="code" >
+		<div id = "c" class="code" >
 int max3(int a, int b, int c){
 	if (a>b && a>c){
 		return a;
@@ -38,20 +39,20 @@ int max3(int a, int b, int c){
 		return c;
 	}
 }
+		</div>
+		
+		<div class="input">
+			<form>
+				<label>A</label>
+				<input type="text" class = "variableInput" id="txtA"><br>
+				<label>B</label>
+				<input type="text" class = "variableInput" id="txtB"><br>
+				<label>C</label>
+				<input type="text" class = "variableInput" id="txtC"><br>
+				<input type="submit" value="Submit" onclick="test();">
+			</form>
+		</div>
 	</div>
-	
-	<div class="input">
-		<form>
-			<label>A</label>
-			<input type="text" class = "variableInput" id="txtA"><br>
-			<label>B</label>
-			<input type="text" class = "variableInput" id="txtB"><br>
-			<label>C</label>
-			<input type="text" class = "variableInput" id="txtC"><br>
-			<input type="submit" value="Submit" onclick="test();">
-		</form>
-	</div>
-	
 	<p id = "demo">
 		
 	</p>

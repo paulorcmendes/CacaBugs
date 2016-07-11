@@ -1,10 +1,10 @@
 div.desc{
 	border-style: transparent;
-	width: 30%;
+	width: 40%;
 }
 div.code{
-	border-style: transparent;
-	width: 30%;
+	border-style: solid;
+	width: 40%;
 	float: left;
 	white-space: pre;
 }
