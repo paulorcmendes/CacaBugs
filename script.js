@@ -104,8 +104,31 @@ function myFunction() {
     	html+= "<input type=\"text\" class = \"variableInput\" id=\"txt"+entry[i].childNodes[0].nodeValue+"\"><br>";
     }
     html += "<input type=\"submit\" value=\"Submit\" onclick=\"test();\">";
-    html += "</div>"
+    html += "</div>";
    
+	html += "<script>";
+	html += "function test(){ var input = document.getElementsByClassName(\"input\");";
+	for (var i = 0; i < entry.length; i++) {
+		html+= " var "+entry[i].childNodes[0].nodeValue + " = Number(document.getElementById(\"txt"+entry[i].childNodes[0].nodeValue+"\").value);";
+	}
+
+	/*	var a = Number(document.getElementById("txtA").value);
+		var b = Number(document.getElementById("txtB").value);
+		var c = Number(document.getElementById("txtC").value);
+	
+		if(isNaN(a) || isNaN(b) || isNaN(c)){
+			window.alert("Entrada Invalida");
+			initValues();
+		}else{
+			if(correct(a, b, c) != wrong(a, b, c)){
+				window.alert("Muito Bem");
+			}else{
+				window.alert("Tente Novamente");
+				initValues();
+			}
+		}
+	}*/
+	html += "</script>";
     document.getElementById("question").innerHTML = html;
 
 
