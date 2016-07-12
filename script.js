@@ -89,7 +89,7 @@ function myFunction(index) {
 
     html+= "<div class=\"tabs\">"
     for (var i = 0; i < code.length; i++) {
-    	html+= "<a href=\"#\" onclick=\"openCode('"+code[i].getAttribute('language')+"');\">"+code[i].getAttribute('language')+"</a>";
+    	html+= "  <a href=\"#\" onclick=\"openCode('"+code[i].getAttribute('language')+"');\">"+code[i].getAttribute('language')+"</a>";
     }
     html+= "</div>"
 
@@ -108,11 +108,13 @@ function myFunction(index) {
     html += "<input type=\"submit\" value=\"Submit\" onclick=\"test()\">";
 
     html += "</div>";
-   
+   	html += "<div class = \"result\" id = \"myResult\"> </div>"; 		
+   		
+	
 	
     document.getElementById("question").innerHTML = html;
 
-    html = "function test(){ var input = document.getElementsByClassName(\"input\");";
+    html = "function test(){ var img; var input = document.getElementsByClassName(\"input\");";
 	for (var i = 0; i < entry.length; i++) {
 		html+= " var "+entry[i].childNodes[0].nodeValue + " = Number(document.getElementById(\"txt"+entry[i].childNodes[0].nodeValue+"\").value);";
 	}
@@ -124,7 +126,7 @@ function myFunction(index) {
 	html+= " isNaN("+entry[entry.length-1].childNodes[0].nodeValue + "))";
 
 	//provisório
-	html+="{ window.alert(\"Entrada Invalida\"); initValues();}";
+	html+="{ window.alert(\"Entrada Invalida\"); initValues(); img = \"\";}";
 
 	html+="else{ if(correct("
 	for (var i = 0; i < entry.length-1; i++) {
@@ -137,14 +139,14 @@ function myFunction(index) {
 	html+= entry[entry.length-1].childNodes[0].nodeValue + ")){";
 
 	//provisório
-	html+= "window.alert(\"Muito Bem\");";
+	html+= "/*window.alert(\"Muito Bem\");*/ img = \"<img src= \'http://i.makeagif.com/media/11-15-2015/4lDs7n.gif\' alt=\'Result\' width=\'100%\' height=\'100%\'>\";";
 
 	html+=" }else{ ";
-	html+=" window.alert(\"Tente Novamente\"); initValues(); "
-	html+="} } }"
+	html+=" /*window.alert(\"Tente Novamente\");*/ initValues(); img = \"<img src=\'http://vandalsbucket.s3-sa-east-1.amazonaws.com/spree/products/45992/large/Errou.jpeg?1439700751\' alt=\'Result\' width=\'100%\' height=\'100%\'>\";";
+	html+="} } document.getElementById(\"myResult\").innerHTML = img;}"
 
 
 	html += test;
 	document.getElementById("scriptMaroto").innerHTML = html;
-}
+}	
 

@@ -2,6 +2,12 @@ div.desc{
 	border-style: transparent;
 	width: 40%;
 }
+div.result{
+	border-style: transparent;
+	width: 16%;
+	height: 16%;
+	margin-left: 42%;
+}
 div.code{
 	border-style: solid;
 	width: 40%;
