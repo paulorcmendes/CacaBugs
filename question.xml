@@ -1,0 +1,356 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataBase>
+  <question>
+    <description>
+      O código abaixo deveria retornar,se o número é par, 0 e, se ímpar, 1. 
+    </description>
+    <code language = 'c'>
+      int paridade(int num){
+      return num;
+      }
+    </code>
+
+    <code language = 'lua'>
+      function paridade(num)
+      return num
+      end
+    </code>
+
+    <code language = 'python'>
+      def changeme(num):
+      return num
+    </code>
+
+    <entry type = 'int'>Num</entry>
+
+    <test>
+      function correct(num){
+      if(num%2==0){
+      return 0;
+      }else{
+      return 1;
+      }
+      }
+      function wrong(num){
+      return num;
+      }
+    </test>
+  </question>
+  <question>
+    <description>
+      O código abaixo deveria retornar se uma pessoa pode dirigir ou não no Brasil. É sabido que uma pessoa pode dirigir se já tiver 18 anos completo.
+    </description>
+
+    <code language = 'lua'>
+      function canDrive(age)​
+      return age &gt; 18​
+      end
+    </code>
+    <code language ='c'>
+      int canDrive(int age){
+      return age &gt; 18;
+      }
+    </code>
+    <entry type='int'>age</entry>
+    <test>
+      function correct(age){
+      return age &gt;= 18;
+      }
+      function wrong(age){
+      return age &gt; 18;
+      }
+    </test>
+  </question>
+
+  <question>
+    <description>
+      O código abaixo deveria retornar a soma de dois números. 
+    </description>
+    <code language = 'c'>
+      int add(int a, int b){
+      if (a == b) return a;
+      else return a+b;
+      }
+    </code>
+
+    <code language = 'lua'>
+      functiona add(a, b)
+      if a==b then return a
+      else return a+b
+      end
+    </code>
+    <entry type = 'int'>A</entry>
+    <entry type = 'int'>B</entry>
+
+    <test>
+      function correct(a, b){
+      return a+b
+      }
+      function wrong(a, b){
+      if (a == b) return a;
+      else return a+b;
+      }
+    </test>
+  </question>
+
+  <question>
+    <description>
+      Na montanha russa do parque de diversões TeleMídia MegaPark, as pessoas podem entrar se ambas tiverem pelo menos 16 anos ou se a soma de suas idades dor maior que 32 anos.
+    </description>
+    <code language='lua'>
+      function canEnter(a, b)​
+      return a+b &gt;= 32 and a&gt;= 16 and b&gt;=16​
+      end
+    </code>
+    <code language='c'>
+      int canEnter(int a, int b){
+      return a+b &gt;= 32 &amp;&amp; a&gt;=16 &amp;&amp; b&gt;=16;
+      }
+    </code>
+    <entry type ='int'>a</entry>
+    <entry type ='int'>b</entry>
+    <test>
+      function correct(a,b){
+      return a+b &gt;=32 || (a&gt;=16 &amp;&amp; b&gt;=16);
+      }
+      function wrong(a,b){
+      return a+b &gt;= 32 &amp;&amp; a&gt;=16 &amp;&amp; b&gt;=16;
+      }
+    </test>
+  </question>
+  <question>
+    <description>
+      O código de informar se há algum par entre os números informados.
+    </description>
+    <code language ='lua'>
+      function pair(a, b, c, d, e)
+      return a==b or a==c or a==d or a==e or c==d or c==e or d==e
+      end
+    </code>
+    <code language='c'>
+      int pair(int a, int b, int c, int d, int e){
+        if(a==b || a==c || a==d || a==e || c==d || c==e || d==e)
+          return 1
+        return 0
+      }
+    </code>
+    <entry type='int'>a</entry>
+    <entry type='int'>b</entry>
+    <entry type='int'>c</entry>
+    <entry type='int'>d</entry>
+    <entry type='int'>e</entry>
+    <test>
+      function correct(a, b, c, d, e){
+        return a==b || a==c || a==d || a==e || b == c || b==d || b==e || c==d || c==e || d==e;
+      }
+      function wrong(a, b, c, d, e){
+        return a==b || a==c || a==d || a==e || c==d || c==e || d==e;     
+      }
+    </test>
+  </question>
+  <question>
+    <description>
+      O código deve retornar se os lados dados podem formar um triângulo.
+    </description>
+    <code language='lua'>
+      function isTriangle(a, b, c)
+      return a+b&gt;c
+      end
+    </code>
+    <code language='c'>
+      int isTriangle(int a, int b, int c){
+        if(a+b&gt;c) return 1
+        return 0
+      }
+    </code>
+    <entry type='int'>a</entry>
+    <entry type='int'>b</entry>
+    <entry type='int'>c</entry>
+    <test>
+      function correct(a, b, c){
+        return a+b&gt;c &amp;&amp; a+c&gt;b &amp;&amp; b+c&gt;a;
+      }
+      function wrong(a, b, c){
+        return a+b&gt;c;
+      }      
+    </test>
+  </question>
+  <question>
+    <description>
+      O código de retornar a area de um triangulo de base b e altura h.
+    </description>
+    <code language ='lua'>
+      function area(b, h)
+        if(b&gt;h) then
+          return b/2*h/2
+        else
+          return b*h/2
+        end
+      end
+    </code>
+    <code language='c'>
+      float area(int b, int h){
+        if(b&gt;h){
+          return b/2*h/2;
+        }else{
+          return b*h/2;
+        }
+      }
+    </code>
+    <entry type ='int'>b</entry>
+    <entry type='int'>h</entry>
+    <test>
+      function correct(b, h){
+        return b*h/2;
+      }
+      function wrong(b, h){
+        if(b&gt;h){
+          return b/2*h/2;
+        }else{
+          return b*h/2;
+        }
+      }
+    </test>
+  </question>
+  <question>
+    <description>O código deve retornar qual dos números de um par é o maior.</description>
+    <code language ='lua'>
+      function maxPair(a, b)
+        if a&gt;b then
+          return a
+        end
+        if b&gt;a then
+          return b
+        end
+        return (a || b)
+      end
+    </code>
+    <code language ='c'>
+      int maxPair(int a, int b){
+        if(a &gt; b){
+          return a;
+        }
+        if(b &gt; a){
+          return b;
+        }
+        return (a || b);
+      }
+    </code>
+    <entry type ='int'>a</entry>
+    <entry type ='int'>b</entry>
+    <test>
+      function correct(a, b){
+        if a&gt;b{
+          return a;
+        }
+        return b;
+      }
+      function wrong(a, b){
+        if(a &gt; b){
+          return a;
+        }
+        if(b &gt; a){
+          return b;
+        }
+        return (a || b);
+      }
+    </test>
+  </question>
+  <question>
+    <description>
+      O código abaixo deveria retornar o maior dentre três números inteiros. Entretanto, há um erro. Você consegue inserir entradas que façam o código retornar uma resposta errada?
+    </description>
+    <code language = 'c'>
+      int max3(int a, int b, int c){
+      if (a &#62; b &#38;&#38; a &#62; c){
+      return a;
+      }else if(b &#62; a &#38;&#38; b &#62; c){
+      return b;
+      }else{
+      return c;
+      }
+      }
+    </code>
+
+    <code language = 'lua'>
+      function max3(a, b, c)
+      if a &#62; b and a &#62; c then
+      return a
+      elseif b &#62; a and b &#62; c then
+      return b
+      else
+      return c
+      end
+      end
+    </code>
+    <entry type = 'int'>A</entry>
+    <entry type = 'int'>B</entry>
+    <entry type = 'int'>C</entry>
+
+    <test>
+      function correct(a, b, c){
+      var maior = a;
+      if(b &#62; maior){
+      maior = b;
+      }
+      if(c &#62; maior){
+      maior = c;
+      } return maior;
+      }
+      function wrong(a, b, c){
+      if (a&#62;b &#38;&#38; a&#62;c){
+      return a;
+      }else if(b&#62;a &#38;&#38; b&#62;c){
+      return b;
+      }else{
+      return c;
+      }
+      }
+    </test>
+  </question>
+
+
+  <question>
+    <description>
+      O código abaixo deveria retornar 'a' elevado a 'b'. Entretanto, há um erro. Você consegue inserir entradas que façam o código retornar uma resposta errada?
+    </description>
+    <code language = 'c'>
+      int potenciacao(int a,int b){
+      int total = a, i;
+      for(i = 1; i &lt;= b-1; i++){
+      total = total*a;
+      }
+      return total;
+      }
+    </code>
+
+    <code language = 'lua'>
+      function potenciacao(a, b)
+      total = a
+      for i = 1, b-1 do
+      total = total*a
+      end
+      return total
+      end
+    </code>
+    <entry type = 'int'>A</entry>
+    <entry type = 'int'>B</entry>
+
+    <test>
+      function correct(a, b){
+      total = 1;
+      for(i = 1; i&lt;= b; i++){
+      total = total*a;
+      }
+      return total;
+      }
+      function wrong(a, b){
+      total = a;
+      for(i = 1; i&lt;= b-1; i++){
+      total = total*a;
+      }
+      return total;
+      }
+    </test>
+  </question>
+</dataBase>
