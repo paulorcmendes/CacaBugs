@@ -364,8 +364,68 @@
       }
     </test>
   </question>
+  <question>
+    <description>
+      A função deve retornar quantos números pares há entres os dados.
+    </description>
+    <code language ='lua'>
+      function countingEvens(a, b, c)
+        count = 0
+        if a%2 == 0 then
+          count = count + 1
+        elseIf b%2 == 0 then
+          count = count + 1
+        elseif c%2 == 0 then
+          count = count + 1
+        end
+        return count
+      end
+    </code>
+    <code language ='c'>
+      int countingEvens(int a, int b, int c){
+        int count = 0;
+        if(a%2 == 0){
+          count++;
+        }else if(b % 2 == 0){
+          count++;
+        }else if(c % 2 == 0){
+          count++;
+        }
+        return count;
+      }
+    </code>
+  
+    <entry type = 'int'>a</entry>
+    <entry type = 'int'>b</entry>
+    <entry type = 'int'>c</entry>
 
-
+    <test>
+      function correct(a, b, c){
+        count = 0;
+        if(a%2 == 0){
+          count++;
+        }
+        if(b%2 == 0){
+          count++;
+        }
+        if(c%2 == 0){
+          count++;
+        }
+        return count;
+      }
+      function wrong(a, b, c){
+        count = 0;
+        if(a%2 == 0){
+          count++;
+        }else if(b % 2 == 0){
+          count++;
+        }else if(c % 2 == 0){
+          count++;
+        }
+        return count;
+      }
+    </test>
+  </question>
   <question>
     <description>
       O código abaixo deveria retornar 'a' elevado a 'b'. Entretanto, há um erro. Você consegue inserir entradas que façam o código retornar uma resposta errada?
