@@ -655,29 +655,30 @@
   </question>
   <question>
     <description>
-      O código abaixo deveria retornar 'a' elevado a 'b'. Entretanto, há um erro. Você consegue inserir entradas que façam o código retornar uma resposta errada?
+      O código abaixo deve retornar 'a' elevado a 'b'.
     </description>
-    <code language = 'c'>
-      int potenciacao(int a,int b){
-      int total = a, i;
-      for(i = 1; i &lt;= b-1; i++){
-      total = total*a;
-      }
-      return total;
-      }
-    </code>
-
+    
     <code language = 'lua'>
       function potenciacao(a, b)
-      total = a
-      for i = 1, b-1 do
-      total = total*a
-      end
-      return total
+        total = a
+        for i = 1, b-1 do
+          total = total*a
+        end
+        return total
       end
     </code>
-    <entry type = 'int'>A</entry>
-    <entry type = 'int'>B</entry>
+    <code language = 'c'>
+      int potenciacao(int a, int b){
+        int total = a, i;
+        for(i = 1; i &lt;= b-1; i++){
+          total = total*a;
+        }
+        return total;
+      }
+    </code>
+    
+    <entry type = 'int'>a</entry>
+    <entry type = 'int'>b</entry>
 
     <test>
       function correct(a, b){
