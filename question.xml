@@ -314,34 +314,34 @@
   </question>
   <question>
     <description>
-      O código abaixo deveria retornar o maior dentre três números inteiros. Entretanto, há um erro. Você consegue inserir entradas que façam o código retornar uma resposta errada?
-    </description>
-    <code language = 'c'>
-      int max3(int a, int b, int c){
-      if (a &#62; b &#38;&#38; a &#62; c){
-      return a;
-      }else if(b &#62; a &#38;&#38; b &#62; c){
-      return b;
-      }else{
-      return c;
-      }
-      }
-    </code>
-
+      O código abaixo deveria retornar o maior dentre três números inteiros.
+    </description>    
     <code language = 'lua'>
       function max3(a, b, c)
-      if a &#62; b and a &#62; c then
-      return a
-      elseif b &#62; a and b &#62; c then
-      return b
-      else
-      return c
+        if a &#62; b and a &#62; c then
+          return a
+        elseif b &#62; a and b &#62; c then
+          return b
+        else
+          return c
+        end
       end
-      end
+    </code>    
+    <code language = 'c'>
+      int max3(int a, int b, int c){
+        if (a &#62; b &#38;&#38; a &#62; c){
+          return a;
+        }else if(b &#62; a &#38;&#38; b &#62; c){
+          return b;
+        }else{
+          return c;
+        }
+      }
     </code>
-    <entry type = 'int'>A</entry>
-    <entry type = 'int'>B</entry>
-    <entry type = 'int'>C</entry>
+    
+    <entry type = 'int'>a</entry>
+    <entry type = 'int'>b</entry>
+    <entry type = 'int'>c</entry>
 
     <test>
       function correct(a, b, c){
