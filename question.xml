@@ -468,6 +468,44 @@
   </question>
   <question>
     <description>
+      Dados três números, o código retorna se eles formam ou não uma progressão geométrica.
+    </description>
+
+    <code language ='lua'>
+      function geoProg(a, b, c)
+        return b/a == c/b
+      end
+    </code>
+    <code language ='c'>
+      int geoProg(int a, int b, int c){
+        if(b/a == c/b) return 1;
+        return 0;
+      }
+    </code>
+  
+    <entry type = 'int'>a</entry>
+    <entry type = 'int'>b</entry>
+    <entry type = 'int'>c</entry>
+
+    <test>
+      function correct(a, b, c)
+        if(a == 0){
+          if(b == 0 &amp;&amp; c==0){
+            return true;
+          }
+          return false;
+        }
+        return b/a == c/b;
+      end
+      
+      function wrong(a, b, c)
+        return b/a == c/b;
+      end
+    </test>
+  
+  </question>
+  <question>
+    <description>
       O código abaixo deveria retornar 'a' elevado a 'b'. Entretanto, há um erro. Você consegue inserir entradas que façam o código retornar uma resposta errada?
     </description>
     <code language = 'c'>
