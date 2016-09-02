@@ -602,6 +602,59 @@
   </question>
   <question>
     <description>
+      A função retorna as raízes de uma equação do segundo grau.
+    </description>
+  
+    <code language ='lua'>
+      function equation(a, b, c)
+        delta = b*b – 4*a*c
+        if delta&lt;0 then
+          return nil
+        end
+        x1 = (-b-math.root(delta))/2*a
+        x2 = (-b+math.root(delta))/2*a
+        return x1, x2
+     end
+    </code>
+    <code language = 'c'>
+      float * equation(float a,float b,float c){
+        float delta = b*b – 4*a*c;
+        float *x;
+        if (delta&lt;0){
+          return NULL;
+        }
+        x = (float *)malloc(sizeof(float)*2);
+        x[0] = (-b-math.root(delta))/2*a;
+        x[1] = (-b+math.root(delta))/2*a;
+        return x;
+     }
+    </code>
+  
+    <entry type ='float'>a</entry>  
+    <entry type ='float'>b</entry>  
+    <entry type ='float'>c</entry>
+
+    <test>
+      function correct(a, b, c){
+        delta = b*b – 4*a*c;
+        if (delta&lt;0){
+          return null;
+        }
+        x = (-b-math.root(delta))/(2*a);
+        return x;
+     }
+     function wrong(a, b, c){
+        delta = b*b – 4*a*c;
+        if (delta&lt;0){
+          return null;
+        }
+        x = (-b-math.root(delta))/2*a;
+        return x;
+     }
+    </test>
+  </question>
+  <question>
+    <description>
       O código abaixo deveria retornar 'a' elevado a 'b'. Entretanto, há um erro. Você consegue inserir entradas que façam o código retornar uma resposta errada?
     </description>
     <code language = 'c'>
