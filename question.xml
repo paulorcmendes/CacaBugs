@@ -697,4 +697,36 @@
       }
     </test>
   </question>
+  <question>
+    <description>
+      Dado um número, o código deve retornar seu fatorial.
+    </description>
+    <code language ='lua'>
+      function fatorial(n)
+        for i=n-1, 1, -1 do
+          n = n*i
+        end
+        return n
+      end
+    </code>
+    <code language ='c'>
+      int fatorial(int n){
+        for (i=n-1; i>=1; i--){
+          n = n*i;
+        }
+        return n;
+      }
+    </code>
+
+    <entry type ='int'>n</entry>
+    <test>
+      function correct(n){
+        total = 1
+        for (i=1; i&lt;=n; i++){
+          total = total*i
+        }
+        return total;
+      }
+    </test>
+  </question>
 </dataBase>
