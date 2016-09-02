@@ -282,6 +282,37 @@
     </test>
   </question>
   <question>
+    <description>Na TV por assinatura Laws TV possui 998 canais, que vão do canal 2 ao canal 999. Os canais payperview da Laws TV são os canais múltiplos de 11 (Ex: 22, 44, 121). O código deve retornar se um dado número é ou não o número de um canal payperview.</description>
+    <code language ='lua'>
+      function payperview(channel)
+        flag = channel&gt;1 and channel&lt;1000
+        flag = channel%11 == 0        
+        return flag
+      end
+    </code>
+    <code language ='c'>
+      int payperview(int channel){
+        int flag;
+        if(channel&gt;1 &amp;&amp; channel&lt;1000) flag = 1;
+        if(channel%11 == 0) flag = 1;
+        return flag;
+      }
+    </code>
+    <entry type ='int'>channel</entry>
+    <test>
+      function correct(channel){
+        flag = channel&gt;1 &amp;&amp; channel&lt;1000;
+        flag = flag &amp;&amp; channel%11 == 0
+        return flag;
+      }
+      function wrong(channel){
+        flag = channel&gt;1 &amp;&amp; channel&lt;1000;
+        flag = channel%11 == 0
+        return flag;
+      }
+    </test>
+  </question>
+  <question>
     <description>
       O código abaixo deveria retornar o maior dentre três números inteiros. Entretanto, há um erro. Você consegue inserir entradas que façam o código retornar uma resposta errada?
     </description>
