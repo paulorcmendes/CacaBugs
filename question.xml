@@ -711,7 +711,7 @@
     </code>
     <code language ='c'>
       int fatorial(int n){
-        for (i=n-1; i>=1; i--){
+        for (i=n-1; i&gt;=1; i--){
           n = n*i;
         }
         return n;
@@ -726,6 +726,60 @@
           total = total*i
         }
         return total;
+      }
+      function wrong(n){
+        for (i=n-1; i&gt;=1; i--){
+          n = n*i;
+        }
+        return n;
+      }
+    </test>
+  </question>
+  <question>
+    <description>
+      O código deve retornar o maior número de um vetor de tamanho 8.
+    </description>
+    <code language ='lua'>
+      function maiorVet( v )
+        maior = 0
+        for i=1,8 do
+          if v[i]&gt;maior then
+            maior = v[i]
+          end
+        end
+        return maior
+      end
+    </code>
+    <code language ='c'>
+      int maiorVet(int *v){
+        int i, maior = 0;
+        for (i = 0; i &lt; 5; i++){
+          if (v[i]&gt;maior){
+            maior = v[i];
+          }
+        }
+        return maior;
+      }
+    </code>
+    <entry type ='vector'>v</entry>
+    <test>
+      function correct(v){
+        maior = v[0];
+        for (i = 1; i &lt; 5; i++){
+          if (v[i]&gt;maior){
+            maior = v[i];
+          }
+        }
+        return maior;
+      }
+      function wrong(v){
+        maior = 0;
+        for (i = 0; i &lt; 5; i++){
+          if (v[i]&gt;maior){
+            maior = v[i];
+          }
+        }
+        return maior;
       }
     </test>
   </question>
