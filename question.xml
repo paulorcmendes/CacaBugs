@@ -258,6 +258,31 @@
   </question>
   <question>
     <description>
+      O código deve retornar qual é menor dentre dois números.
+    </description>
+    <code language ='lua'>
+      function min(a, b)
+        return (a&lt;b and a) or (a&gt;b and b)
+      end
+    </code>
+    <code language = 'c'>
+      int min(int a, int b){
+        return (a&lt;b &amp;&amp; a) or (a&gt;b &amp;&amp; b);
+      }
+    </code>
+    <entry type ='int'>a</entry>
+    <entry type ='int'>b</entry>
+    <test>
+      function correct(a, b){
+        return (a&lt;b  &amp;&amp; a) || b;
+      }
+      function wrong(a, b){
+        return (a&lt;b &amp;&amp; a) or (a&gt;b &amp;&amp; b);
+      }
+    </test>
+  </question>
+  <question>
+    <description>
       O código abaixo deveria retornar o maior dentre três números inteiros. Entretanto, há um erro. Você consegue inserir entradas que façam o código retornar uma resposta errada?
     </description>
     <code language = 'c'>
