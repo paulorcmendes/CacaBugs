@@ -120,7 +120,7 @@
   </question>
   <question>
     <description>
-      O código de informar se há algum par entre os números informados.
+      O código de informar se há algum par de números entre os informados.
     </description>
     <code language ='lua'>
       function pair(a, b, c, d, e)
