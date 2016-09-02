@@ -428,6 +428,46 @@
   </question>
   <question>
     <description>
+      O código deve retornar se há algum número ímpar dentre os dados.
+    </description>
+    <code language ='lua'>
+      function countOdds(a, b)
+        if(a+b)%2 == 0 then
+          return 0
+        else
+          return 1
+        end
+      end
+    </code>
+    <code language ='c'>
+      int countOdds(int a, int b){
+        if((a+b)%2 == 0){
+          return 0;
+        }else{
+          return 1;
+        }
+      }
+    </code>
+  
+    <entry type ='int'>a</entry>
+    <entry type ='int'>b</entry>
+
+    <test>
+      function correct(a, b){
+        if(a%2 == 0 || b%2 == 0) return 1;
+        return 0;
+      }
+      function wrong(a, b){
+        if((a+b)%2 == 0){
+          return 0;
+        }else{
+          return 1;
+        }
+      }      
+    </test>
+  </question>
+  <question>
+    <description>
       O código abaixo deveria retornar 'a' elevado a 'b'. Entretanto, há um erro. Você consegue inserir entradas que façam o código retornar uma resposta errada?
     </description>
     <code language = 'c'>
