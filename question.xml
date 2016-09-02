@@ -501,8 +501,104 @@
       function wrong(a, b, c)
         return b/a == c/b;
       end
-    </test>
+    </test>  
+  </question>
+  <question>
+    <description>
+      Dadas três strings, o código deve retornar quantas delas são a palavra "cosmos".
+    </description>
   
+    <code language ='lua'>
+      function countCosmos(a, b, c)
+        if a == "cosmos" then
+          if b == "cosmos" then
+            if c == "cosmos" then
+              return 3
+            else
+              return 2
+            end
+          elseif c == "cosmos" then
+             return 2
+          else
+            return 1
+          end
+        else
+          if b == "cosmos" then
+            return 1
+          elseif c == "cosmos" then
+            return 1
+          else
+            return 0
+          end
+        end
+        return 0
+      end
+    </code>
+  
+    <code language ='c'>
+      int countCosmos(char *a, char *b,char *c){
+        if (strcmp(a, "cosmos")==0){
+          if (strcmp(b, "cosmos")==0){
+            if (strcmp(c, "cosmos")==0){
+              return 3;
+            }else{
+              return 2;
+            }
+          else if(strcmp(c, "cosmos")==0){
+             return 2;
+          }else{
+            return 1;
+          }
+        }else{
+          if (strcmp(b, "cosmos")==0){
+            return 1;
+          }else if (strcmp(c, "cosmos")==0){
+            return 1;
+          }else{
+            return 0;
+          }
+        }
+        return 0;
+      }
+    </code>
+
+    <entry type ='string'>a</entry>
+    <entry type ='string'>b</entry>
+    <entry type ='string'>c</entry>
+
+    <test>
+      function correct(a, b, c){
+        count = 0;
+        if(a == "cosmos") count++;
+        if(b == "cosmos") count++;
+        if(c == "cosmos") count++;
+        return count;
+      }
+      function wrong(a, b, c){
+        if (a == "cosmos"){
+          if (b == "cosmos"){
+            if (c == "cosmos"){
+              return 3;
+            }else{
+              return 2;
+            }
+          else if(c == "cosmos"){
+             return 2;
+          }else{
+            return 1;
+          }
+        }else{
+          if (b == "cosmos"){
+            return 1;
+          }else if (c == "cosmos"){
+            return 1;
+          }else{
+            return 0;
+          }
+        }
+        return 0;
+      }
+    </test>
   </question>
   <question>
     <description>
