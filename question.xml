@@ -243,8 +243,8 @@
     <entry type ='int'>b</entry>
     <test>
       function correct(a, b){
-        if a&gt;b{
-          return a;
+        if( a &gt; b){
+          return a;        
         }
         return b;
       }
