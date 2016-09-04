@@ -105,7 +105,7 @@ function myFunction(index) {
     	html+= "<label>"+entry[i].childNodes[0].nodeValue+"</label>";
     	html+= "<input type=\"text\" class = \"variableInput\" id=\"txt"+entry[i].childNodes[0].nodeValue+"\"><br>";
     }
-    html += "<input type=\"submit\" value=\"Submit\" onclick=\"test()\">";
+    html += "<input type=\"submit\" value=\"Submit\" onclick=\"test"+index+"()\">";
 
     html += "</div>";
    	html += "<div class = \"result\" id = \"myResult\"> </div>"; 		
@@ -113,8 +113,8 @@ function myFunction(index) {
 	
 	
     document.getElementById("question").innerHTML = html;
-
-    html = "function test(){ var img; var flag = false;";
+    
+    html = "function test"+index+"(){ var img; var flag = false;";
 	for (var i = 0; i < entry.length; i++) {
 		var variableName = entry[i].childNodes[0].nodeValue;
 		var type = entry[i].getAttribute('type');
@@ -155,7 +155,7 @@ function myFunction(index) {
 	html+= entry[entry.length-1].childNodes[0].nodeValue + ")){";
 
 	//provisório
-	html+= "/*window.alert(\"Muito Bem\");*/ img = \"<img src= \'http://i.makeagif.com/media/11-15-2015/4lDs7n.gif\' alt=\'Result\' width=\'100%\' height=\'100%\'>\";";
+	html+= "myFunction("+(index+1)+"); return ; /*window.alert(\"Muito Bem\");*/ img = \"<img src= \'http://i.makeagif.com/media/11-15-2015/4lDs7n.gif\' alt=\'Result\' width=\'100%\' height=\'100%\'>\";";
 	///html+=" myFunction("+(index+1)+");";
 	html+=" }else{ ";
 	html+=" /*window.alert(\"Tente Novamente\");*/ initValues(); img = \"<img src=\'http://vandalsbucket.s3-sa-east-1.amazonaws.com/spree/products/45992/large/Errou.jpeg?1439700751\' alt=\'Result\' width=\'100%\' height=\'100%\'>\";";
