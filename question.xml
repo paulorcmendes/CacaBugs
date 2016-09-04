@@ -225,7 +225,7 @@
         if b&gt;a then
           return b
         end
-        return (a || b)
+        return 0
       end
     </code>
     <code language ='c'>
@@ -236,7 +236,7 @@
         if(b &gt; a){
           return b;
         }
-        return (a || b);
+        return 0;
       }
     </code>
     <entry type ='int'>a</entry>
@@ -255,7 +255,7 @@
         if(b &gt; a){
           return b;
         }
-        return (a || b);
+        return 0;
       }
     </test>
   </question>
@@ -457,7 +457,7 @@
 
     <test>
       function correct(a, b){
-        if(a%2 == 0 || b%2 == 0) return 1;
+        if(a%2 == 1 || b%2 == 1) return 1;
         return 0;
       }
       function wrong(a, b){

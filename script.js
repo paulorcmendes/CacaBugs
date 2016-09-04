@@ -161,6 +161,6 @@ function myFunction(index) {
 
 
 	html += test;
-	document.getElementById("scriptMaroto").innerHTML = html+ "openCode(\""+code[0].getAttribute('language')+"\");";
+	document.getElementById("scriptMaroto").innerHTML = html + " openCode(\""+code[0].getAttribute('language')+"\");";
 }	
 
