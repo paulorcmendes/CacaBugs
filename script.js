@@ -117,10 +117,19 @@ function myFunction(index) {
     html = "function test(){ var img; var flag = false;";
 	for (var i = 0; i < entry.length; i++) {
 		var variableName = entry[i].childNodes[0].nodeValue;
-
+		var type = entry[i].getAttribute('type');
 		//caso particular de teste de cada tipo
-		html+= " var "+variableName+ " = Number(document.getElementById(\"txt"+variableName+"\").value);";
-		html+= "if ("+variableName+" == \"\" ||  isNaN("+variableName+")) { flag = true;}"
+		if(type == "int"){
+			html+= " var "+variableName+ " = Number(document.getElementById(\"txt"+variableName+"\").value);";
+			html+= "if ("+variableName+" == \"\" ||  isNaN("+variableName+")) { flag = true;}"
+		}else if(type == "vector"){
+			html+= " var "+variableName+ " = document.getElementById(\"txt"+variableName+"\").value.split(\" \");";
+			html+= " for(i = 0; i < "+variableName+".length; i++){"
+			html+= " if("+variableName+"[i] == \" \" || "+variableName+"[i] == \"\"){";
+			html+= "flag = true; break;}"
+			html+= variableName+"[i] = Number("+variableName+"[i]);"
+			html+= "if (isNaN("+variableName+"[i])) { flag = true; break; } }";
+		}
 	}
 
 	//provisório
