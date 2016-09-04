@@ -585,7 +585,7 @@
             }else{
               return 2;
             }
-          else if(c == "cosmos"){
+          }else if(c == "cosmos"){
              return 2;
           }else{
             return 1;

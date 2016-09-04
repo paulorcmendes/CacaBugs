@@ -136,6 +136,8 @@ function myFunction(index) {
 			html+= "flag = true; break;}"
 			html+= variableName+"[i] = Number("+variableName+"[i]);"
 			html+= "if (isNaN("+variableName+"[i])) { flag = true; break; } }";
+		}else{
+			html+= " var "+variableName+ " = document.getElementById(\"txt"+variableName+"\").value;";
 		}
 	}
 
