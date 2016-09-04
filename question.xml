@@ -627,8 +627,8 @@
           return NULL;
         }
         x = (float *)malloc(sizeof(float)*2);
-        x[0] = (-b-math.root(delta))/2*a;
-        x[1] = (-b+math.root(delta))/2*a;
+        x[0] = (-b-sqrt(delta))/2*a;
+        x[1] = (-b+sqrt(delta))/2*a;
         return x;
      }
     </code>
@@ -639,7 +639,8 @@
 
     <test>
       function correct(a, b, c){
-        delta = b*b – 4*a*c;
+        //delta = 0;
+        delta = (b*b)-4*a*c;
         if (delta&lt;0){
           return null;
         }
@@ -647,7 +648,8 @@
         return x;
      }
      function wrong(a, b, c){
-        delta = b*b – 4*a*c;
+        //delta = 0;
+        delta = (b*b)-4*a*c;
         if (delta&lt;0){
           return null;
         }

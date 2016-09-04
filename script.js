@@ -120,11 +120,15 @@ function myFunction(index) {
 		var type = entry[i].getAttribute('type');
 		//caso particular de teste de cada tipo
 		if(type == "int"){
+			html+= " var "+variableName+ " = document.getElementById(\"txt"+variableName+"\").value;";
+			html+= "if ("+variableName+" == \"\") { flag = true;}"
 			html+= " var "+variableName+ " = Number(document.getElementById(\"txt"+variableName+"\").value);";
-			html+= "if ("+variableName+" == \"\" ||  isNaN("+variableName+") || !Number.isInteger("+variableName+")) { flag = true;}"
+			html+= "if (isNaN("+variableName+") || !Number.isInteger("+variableName+")) { flag = true;}"
 		}else if(type == "float"){
+			html+= " var "+variableName+ " = document.getElementById(\"txt"+variableName+"\").value;";
+			html+= "if ("+variableName+" == \"\") { flag = true;}"
 			html+= " var "+variableName+ " = Number(document.getElementById(\"txt"+variableName+"\").value);";
-			html+= "if ("+variableName+" == \"\" ||  isNaN("+variableName+")) { flag = true;}"
+			html+= "if (isNaN("+variableName+")) { flag = true;}"
 		}else if(type == "vector"){
 			html+= " var "+variableName+ " = document.getElementById(\"txt"+variableName+"\").value.split(\" \");";
 			html+= " for(i = 0; i < "+variableName+".length; i++){"
