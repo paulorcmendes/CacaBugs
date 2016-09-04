@@ -121,6 +121,9 @@ function myFunction(index) {
 		//caso particular de teste de cada tipo
 		if(type == "int"){
 			html+= " var "+variableName+ " = Number(document.getElementById(\"txt"+variableName+"\").value);";
+			html+= "if ("+variableName+" == \"\" ||  isNaN("+variableName+") || !Number.isInteger("+variableName+")) { flag = true;}"
+		}else if(type == "float"){
+			html+= " var "+variableName+ " = Number(document.getElementById(\"txt"+variableName+"\").value);";
 			html+= "if ("+variableName+" == \"\" ||  isNaN("+variableName+")) { flag = true;}"
 		}else if(type == "vector"){
 			html+= " var "+variableName+ " = document.getElementById(\"txt"+variableName+"\").value.split(\" \");";
