@@ -643,7 +643,7 @@
         if (delta&lt;0){
           return null;
         }
-        x = (-b-math.root(delta))/(2*a);
+        x = (-b-Math.sqrt(delta))/(2*a);
         return x;
      }
      function wrong(a, b, c){
@@ -651,7 +651,7 @@
         if (delta&lt;0){
           return null;
         }
-        x = (-b-math.root(delta))/2*a;
+        x = (-b-Math.sqrt(delta))/2*a;
         return x;
      }
     </test>
