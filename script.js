@@ -30,7 +30,7 @@ function openCode(language){
 function initValues(){
 	var ipts = document.getElementsByClassName("variableInput");
 	for (var i = 0; i < ipts.length; i++) {
-		ipts[i].value = 0;
+		ipts[i].value = "";
 	}
 }
 /*
@@ -114,19 +114,17 @@ function myFunction(index) {
 	
     document.getElementById("question").innerHTML = html;
 
-    html = "function test(){ var img; var input = document.getElementsByClassName(\"input\");";
+    html = "function test(){ var img; var flag = false;";
 	for (var i = 0; i < entry.length; i++) {
-		html+= " var "+entry[i].childNodes[0].nodeValue + " = Number(document.getElementById(\"txt"+entry[i].childNodes[0].nodeValue+"\").value);";
-	}
+		var variableName = entry[i].childNodes[0].nodeValue;
 
-	html += "if(";
-	for (var i = 0; i < entry.length-1; i++) {
-		html+= " isNaN("+entry[i].childNodes[0].nodeValue + ") ||";
+		//caso particular de teste de cada tipo
+		html+= " var "+variableName+ " = Number(document.getElementById(\"txt"+variableName+"\").value);";
+		html+= "if ("+variableName+" == \"\" ||  isNaN("+variableName+")) { flag = true;}"
 	}
-	html+= " isNaN("+entry[entry.length-1].childNodes[0].nodeValue + "))";
 
 	//provisório
-	html+="{ window.alert(\"Entrada Invalida\"); initValues(); img = \"\";}";
+	html+="if(flag){ window.alert(\"Entrada Invalida\"); initValues(); img = \"\";}";
 
 	html+="else{ if(correct("
 	for (var i = 0; i < entry.length-1; i++) {
