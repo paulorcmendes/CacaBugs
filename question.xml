@@ -476,7 +476,7 @@
 
     <code language ='lua'>
       function geoProg(a, b, c)
-        return b/a == c/b
+        return (b/a == c/b)
       end
     </code>
     <code language ='c'>
@@ -491,19 +491,19 @@
     <entry type = 'int'>c</entry>
 
     <test>
-      function correct(a, b, c)
+      function correct(a, b, c){
         if(a == 0){
           if(b == 0 &amp;&amp; c==0){
             return true;
           }
           return false;
         }
-        return b/a == c/b;
-      end
+        return (b/a == c/b);
+      }
       
-      function wrong(a, b, c)
-        return b/a == c/b;
-      end
+      function wrong(a, b, c){
+        return (b/a == c/b);
+      }
     </test>  
   </question>
   <question>
