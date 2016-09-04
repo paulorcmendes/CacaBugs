@@ -161,8 +161,10 @@ function myFunction(index) {
 	html+=" /*window.alert(\"Tente Novamente\");*/ initValues(); img = \"<img src=\'http://vandalsbucket.s3-sa-east-1.amazonaws.com/spree/products/45992/large/Errou.jpeg?1439700751\' alt=\'Result\' width=\'100%\' height=\'100%\'>\";";
 	html+="} } document.getElementById(\"myResult\").innerHTML = img;}"
 
-
 	html += test;
-	document.getElementById("scriptMaroto").innerHTML = html + " openCode(\""+code[0].getAttribute('language')+"\");";
+	
+	html+= " openCode(\""+code[0].getAttribute('language')+"\");";
+	
+	document.getElementById("scriptMaroto").innerHTML = html;
 }	
 
