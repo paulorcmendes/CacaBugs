@@ -154,13 +154,13 @@ function myFunction(index) {
 
 	//provisório
 	html+= "/*window.alert(\"Muito Bem\");*/ img = \"<img src= \'http://i.makeagif.com/media/11-15-2015/4lDs7n.gif\' alt=\'Result\' width=\'100%\' height=\'100%\'>\";";
-
+	///html+=" myFunction("+(index+1)+");";
 	html+=" }else{ ";
 	html+=" /*window.alert(\"Tente Novamente\");*/ initValues(); img = \"<img src=\'http://vandalsbucket.s3-sa-east-1.amazonaws.com/spree/products/45992/large/Errou.jpeg?1439700751\' alt=\'Result\' width=\'100%\' height=\'100%\'>\";";
 	html+="} } document.getElementById(\"myResult\").innerHTML = img;}"
 
 
 	html += test;
-	document.getElementById("scriptMaroto").innerHTML = html;
+	document.getElementById("scriptMaroto").innerHTML = html+ "openCode(\""+code[0].getAttribute('language')+"\");";
 }	
 
