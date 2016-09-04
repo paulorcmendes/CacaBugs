@@ -265,22 +265,22 @@
     </description>
     <code language ='lua'>
       function min(a, b)
-        return (a&lt;b and a) or (a&gt;b and b)
+        return (a &lt; b and a) or (a &gt; b and b)
       end
     </code>
     <code language = 'c'>
       int min(int a, int b){
-        return (a&lt;b &amp;&amp; a) or (a&gt;b &amp;&amp; b);
+        return (a &lt; b &amp;&amp; a) or (a &gt; b &amp;&amp; b);
       }
     </code>
     <entry type ='int'>a</entry>
     <entry type ='int'>b</entry>
     <test>
       function correct(a, b){
-        return (a&lt;b  &amp;&amp; a) || b;
+        return (a &lt; b  &amp;&amp; a) || b;
       }
       function wrong(a, b){
-        return (a&lt;b &amp;&amp; a) or (a&gt;b &amp;&amp; b);
+        return (a &lt; b &amp;&amp; a) || (a&gt;b &amp;&amp; b);
       }
     </test>
   </question>
