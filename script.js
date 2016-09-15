@@ -34,11 +34,11 @@ function loadXMLDoc(dname){
 function loadHTMLOfQuestion(index) {
     var html = "";
 	var x;    
-    question = dataBase.getElementsByTagName("question")[index];
-    description = question.getElementsByTagName("description")[0].childNodes[0].nodeValue;
-    code = question.getElementsByTagName("code");
-    entry = question.getElementsByTagName("entry");
-    test = question.getElementsByTagName("test")[0].childNodes[0].nodeValue;
+    var question = dataBase.getElementsByTagName("question")[index];
+    var description = question.getElementsByTagName("description")[0].childNodes[0].nodeValue;
+    var code = question.getElementsByTagName("code");
+    var entry = question.getElementsByTagName("entry");
+    var test = question.getElementsByTagName("test")[0].childNodes[0].nodeValue;
     
     html += "<div id = \"question\" class =  \"total\">";
     html += "<div class = \"desc\">"+description+"</div>";    
@@ -70,3 +70,18 @@ function loadHTMLOfQuestion(index) {
     openCode(code[0].getAttribute('language'));
 }	
 
+function loadHTMLOfMenu(numberOfColumns){
+    var questions = dataBase.getElementsByTagName("question");
+    var divMenu = document.createElement("DIV");
+    var table = document.createElement("TABLE");
+    var actualRow;
+    var iRow = 0;
+    divMenu.className = "menu";
+    for(var i = 0; i<questions.length; i++){
+        if(i%numberOfColumns == 0) actualRow = table.insertRow(iRow++);
+        actualRow.insertCell(i%numberOfColumns).innerHTML = "Question "+(i+1);
+    }
+    divMenu.appendChild(table);
+    document.body.innerHTML = "";
+    document.body.appendChild(divMenu);
+}

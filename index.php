@@ -14,7 +14,7 @@
 </head>
 <body>	
 	<script>
-	loadHTMLOfQuestion(2);
+	loadHTMLOfMenu(3);
 	</script>	
 </body>
 </html>
