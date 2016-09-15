@@ -1,3 +1,5 @@
+var xmlDoc = loadXMLDoc("question.xml"); 
+var dataBase = xmlDoc.getElementsByTagName("dataBase")[0];
 
 function openCode(language){		
 	var i;
@@ -31,9 +33,7 @@ function loadXMLDoc(dname){
 }
 function myFunction(index) {
     var html = "";
-	var x;
-    var xmlDoc = loadXMLDoc("question.xml"); 
-    dataBase = xmlDoc.getElementsByTagName("dataBase")[0];
+	var x;    
     question = dataBase.getElementsByTagName("question")[index];
     description = question.getElementsByTagName("description")[0].childNodes[0].nodeValue;
     code = question.getElementsByTagName("code");
