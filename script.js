@@ -71,6 +71,7 @@ function loadHTMLOfQuestion(index) {
 }	
 
 function loadHTMLOfMenu(numberOfColumns){
+    if(numberOfColumns == null) numberOfColumns = 5;
     var questions = dataBase.getElementsByTagName("question");
     var divMenu = document.createElement("DIV");
     var table = document.createElement("TABLE");

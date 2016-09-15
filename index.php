@@ -14,7 +14,7 @@
 </head>
 <body>	
 	<script>
-	loadHTMLOfMenu(3);
+	loadHTMLOfMenu();
 	</script>	
 </body>
 </html>
