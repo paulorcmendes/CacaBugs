@@ -54,9 +54,8 @@
 		$html.=" /*window.alert(\"Tente Novamente\");*/ initValues(); img = \"<img src=\'http://vandalsbucket.s3-sa-east-1.amazonaws.com/spree/products/45992/large/Errou.jpeg?1439700751\' alt=\'Result\' width=\'100%\' height=\'100%\'>\";";
 		$html.="} } document.getElementById(\"myResult\").innerHTML = img;}";
 
-		$html .= $test;
+		$html .= $test;		
 		
-		//$html .= " openCode(\"".$code['language']."\");";
 		$myfile = fopen("scriptQuestions.js", "w") or die("Unable to open file!");
 		fwrite($myfile, $html);
 		fclose($myfile);

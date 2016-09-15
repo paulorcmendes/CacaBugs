@@ -63,10 +63,8 @@ function myFunction(index) {
     html += "<input type=\"submit\" value=\"Submit\" onclick=\"test"+index+"()\">";
 
     html += "</div>";
-   	html += "<div class = \"result\" id = \"myResult\"> </div>"; 		
-   		
-	
-	
+   	html += "<div class = \"result\" id = \"myResult\"> </div>";	
     document.getElementById("question").innerHTML = html;
+    openCode(code[0].getAttribute('language'));
 }	
 
