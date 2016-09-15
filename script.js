@@ -79,7 +79,7 @@ function loadHTMLOfMenu(numberOfColumns){
     divMenu.className = "menu";
     for(var i = 0; i<questions.length; i++){
         if(i%numberOfColumns == 0) actualRow = table.insertRow(iRow++);
-        actualRow.insertCell(i%numberOfColumns).innerHTML = "Question "+(i+1);
+        actualRow.insertCell(i%numberOfColumns).innerHTML = "<button onclick = \"loadHTMLOfQuestion("+i+");\">Question "+(i+1)+"</button>";
     }
     divMenu.appendChild(table);
     document.body.innerHTML = "";
