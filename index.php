@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-	<script src = "script.js"></script>	
 	<?php
 		include 'generateFunctions.php';
 		generate(); 
 	?>
+	<script src = "script.js"></script>		
 	<script src = "scriptQuestions.js"></script>
 	<title>Caca Bugs</title>
 
-	<link rel="stylesheet" href="style.css">	
- 	
+	<link rel="stylesheet" href="style.css">		
 
 </head>
-<body>
-
-	<div id = "question" class =  "total">
-		<script>
-		myFunction(2);
-		</script>
-	</div>	
+<body>	
+	<script>
+	myFunction(2);
+	</script>	
 </body>
 </html>
