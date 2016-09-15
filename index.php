@@ -14,7 +14,7 @@
 </head>
 <body>	
 	<script>
-	myFunction(2);
+	loadHTMLOfQuestion(2);
 	</script>	
 </body>
 </html>

@@ -31,7 +31,7 @@ function loadXMLDoc(dname){
     xhttp.send();
     return xhttp.responseXML;
 }
-function myFunction(index) {
+function loadHTMLOfQuestion(index) {
     var html = "";
 	var x;    
     question = dataBase.getElementsByTagName("question")[index];
