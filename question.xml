@@ -25,14 +25,14 @@
     <entry type = 'int'>Num</entry>
 
     <test>
-      function correct(num){
+      function correct0(num){
       if(num%2==0){
       return 0;
       }else{
       return 1;
       }
       }
-      function wrong(num){
+      function wrong0(num){
       return num;
       }
     </test>
@@ -54,10 +54,10 @@
     </code>
     <entry type='int'>age</entry>
     <test>
-      function correct(age){
+      function correct1(age){
       return age &gt;= 18;
       }
-      function wrong(age){
+      function wrong1(age){
       return age &gt; 18;
       }
     </test>
@@ -86,10 +86,10 @@
     <entry type = 'int'>B</entry>
 
     <test>
-      function correct(a, b){
+      function correct2(a, b){
       return a+b
       }
-      function wrong(a, b){
+      function wrong2(a, b){
       if (a == b) return a;
       else return a+b;
       }
@@ -113,10 +113,10 @@
     <entry type ='int'>a</entry>
     <entry type ='int'>b</entry>
     <test>
-      function correct(a,b){
+      function correct3(a,b){
       return a+b &gt;=32 || (a&gt;=16 &amp;&amp; b&gt;=16);
       }
-      function wrong(a,b){
+      function wrong3(a,b){
       return a+b &gt;= 32 &amp;&amp; a&gt;=16 &amp;&amp; b&gt;=16;
       }
     </test>
@@ -143,10 +143,10 @@
     <entry type='int'>d</entry>
     <entry type='int'>e</entry>
     <test>
-      function correct(a, b, c, d, e){
+      function correct4(a, b, c, d, e){
         return a==b || a==c || a==d || a==e || b == c || b==d || b==e || c==d || c==e || d==e;
       }
-      function wrong(a, b, c, d, e){
+      function wrong4(a, b, c, d, e){
         return a==b || a==c || a==d || a==e || c==d || c==e || d==e;     
       }
     </test>
@@ -170,10 +170,10 @@
     <entry type='int'>b</entry>
     <entry type='int'>c</entry>
     <test>
-      function correct(a, b, c){
+      function correct5(a, b, c){
         return a+b&gt;c &amp;&amp; a+c&gt;b &amp;&amp; b+c&gt;a;
       }
-      function wrong(a, b, c){
+      function wrong5(a, b, c){
         return a+b&gt;c;
       }      
     </test>
@@ -203,10 +203,10 @@
     <entry type ='int'>b</entry>
     <entry type='int'>h</entry>
     <test>
-      function correct(b, h){
+      function correct6(b, h){
         return b*h/2;
       }
-      function wrong(b, h){
+      function wrong6(b, h){
         if(b&gt;h){
           return b/2*h/2;
         }else{
@@ -242,13 +242,13 @@
     <entry type ='int'>a</entry>
     <entry type ='int'>b</entry>
     <test>
-      function correct(a, b){
+      function correct7(a, b){
         if( a &gt; b){
           return a;        
         }
         return b;
       }
-      function wrong(a, b){
+      function wrong7(a, b){
         if(a &gt; b){
           return a;
         }
@@ -276,10 +276,10 @@
     <entry type ='int'>a</entry>
     <entry type ='int'>b</entry>
     <test>
-      function correct(a, b){
+      function correct8(a, b){
         return (a &lt; b  &amp;&amp; a) || b;
       }
-      function wrong(a, b){
+      function wrong8(a, b){
         return (a &lt; b &amp;&amp; a) || (a&gt;b &amp;&amp; b);
       }
     </test>
@@ -303,12 +303,12 @@
     </code>
     <entry type ='int'>channel</entry>
     <test>
-      function correct(channel){
+      function correct9(channel){
         flag = channel&gt;1 &amp;&amp; channel&lt;1000;
         flag = flag &amp;&amp; channel%11 == 0
         return flag;
       }
-      function wrong(channel){
+      function wrong9(channel){
         flag = channel&gt;1 &amp;&amp; channel&lt;1000;
         flag = channel%11 == 0
         return flag;
@@ -347,7 +347,7 @@
     <entry type = 'int'>c</entry>
 
     <test>
-      function correct(a, b, c){
+      function correct10(a, b, c){
       var maior = a;
       if(b &#62; maior){
       maior = b;
@@ -356,7 +356,7 @@
       maior = c;
       } return maior;
       }
-      function wrong(a, b, c){
+      function wrong10(a, b, c){
       if (a&#62;b &#38;&#38; a&#62;c){
       return a;
       }else if(b&#62;a &#38;&#38; b&#62;c){
@@ -403,7 +403,7 @@
     <entry type = 'int'>c</entry>
 
     <test>
-      function correct(a, b, c){
+      function correct11(a, b, c){
         count = 0;
         if(a%2 == 0){
           count++;
@@ -416,7 +416,7 @@
         }
         return count;
       }
-      function wrong(a, b, c){
+      function wrong11(a, b, c){
         count = 0;
         if(a%2 == 0){
           count++;
@@ -456,11 +456,11 @@
     <entry type ='int'>b</entry>
 
     <test>
-      function correct(a, b){
+      function correct12(a, b){
         if(a%2 == 1 || b%2 == 1) return 1;
         return 0;
       }
-      function wrong(a, b){
+      function wrong12(a, b){
         if((a+b)%2 == 0){
           return 0;
         }else{
@@ -491,7 +491,7 @@
     <entry type = 'int'>c</entry>
 
     <test>
-      function correct(a, b, c){
+      function correct13(a, b, c){
         if(a == 0){
           if(b == 0 &amp;&amp; c==0){
             return true;
@@ -501,7 +501,7 @@
         return (b/a == c/b);
       }
       
-      function wrong(a, b, c){
+      function wrong13(a, b, c){
         return (b/a == c/b);
       }
     </test>  
@@ -570,14 +570,14 @@
     <entry type ='string'>c</entry>
 
     <test>
-      function correct(a, b, c){
+      function correct14(a, b, c){
         count = 0;
         if(a == "cosmos") count++;
         if(b == "cosmos") count++;
         if(c == "cosmos") count++;
         return count;
       }
-      function wrong(a, b, c){
+      function wrong14(a, b, c){
         if (a == "cosmos"){
           if (b == "cosmos"){
             if (c == "cosmos"){
@@ -638,7 +638,7 @@
     <entry type ='float'>c</entry>
 
     <test>
-      function correct(a, b, c){
+      function correct15(a, b, c){
         //delta = 0;
         delta = (b*b)-4*a*c;
         if (delta&lt;0){
@@ -647,7 +647,7 @@
         x = (-b-Math.sqrt(delta))/(2*a);
         return x;
      }
-     function wrong(a, b, c){
+     function wrong15(a, b, c){
         //delta = 0;
         delta = (b*b)-4*a*c;
         if (delta&lt;0){
@@ -686,14 +686,14 @@
     <entry type = 'int'>b</entry>
 
     <test>
-      function correct(a, b){
+      function correct16(a, b){
       total = 1;
       for(i = 1; i&lt;= b; i++){
       total = total*a;
       }
       return total;
       }
-      function wrong(a, b){
+      function wrong16(a, b){
       total = a;
       for(i = 1; i&lt;= b-1; i++){
       total = total*a;
@@ -725,14 +725,14 @@
 
     <entry type ='int'>n</entry>
     <test>
-      function correct(n){
+      function correct17(n){
         total = 1
         for (i=1; i&lt;=n; i++){
           total = total*i
         }
         return total;
       }
-      function wrong(n){
+      function wrong17(n){
         for (i=n-1; i&gt;=1; i--){
           n = n*i;
         }
@@ -768,7 +768,7 @@
     </code>
     <entry type ='vector'>v</entry>
     <test>
-      function correct(v){
+      function correct18(v){
         maior = v[0];
         for (i = 1; i &lt; 5; i++){
           if (v[i]&gt;maior){
@@ -777,7 +777,7 @@
         }
         return maior;
       }
-      function wrong(v){
+      function wrong18(v){
         maior = 0;
         for (i = 0; i &lt; 5; i++){
           if (v[i]&gt;maior){
@@ -825,7 +825,7 @@
     <entry type ='int'>num</entry>
 
     <test>
-      function correct(num){        
+      function correct19(num){        
         if(num&gt;1){
           for (i=2; i&lt;=num/2; i++){
             if( num%i == 0 ){
@@ -836,7 +836,7 @@
         }
         return false;
       }
-      function wrong(num){        
+      function wrong19(num){        
         if(num&gt;0){
           for (i=2; i&lt;=num/2; i++){
             if( num%i == 0 ){
