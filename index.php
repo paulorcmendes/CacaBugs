@@ -75,7 +75,7 @@
 
 	<div id = "question" class =  "total">
 		<script>
-		myFunction(0);
+		myFunction(5);
 		</script>
 	</div>	
 </body>
