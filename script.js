@@ -96,12 +96,26 @@ function reactToAnswer(result, index){
     
     
     if(result){        
-
+        var divCaixaResposta = document.createElement("DIV");
+        divCaixaResposta.id = "caixaResposta";
         if(index != lastIndex){ 
-            divPopup.innerHTML = "<div id=\"caixaResposta\"><p>Você Passou de Nível!</p></br><a href=\"#\" class=\"caixaRespostaButton\">Next</a> <a href=\"#\" class=\"caixaRespostaButton\">Try Again</a> <a href=\"#\" class=\"caixaRespostaButton\">Menu</a></div>";
+            para = document.createElement("p");
+            para.appendChild(document.createTextNode("Você Passou de Nível!"));
+            divCaixaResposta.appendChild(para);
+            divCaixaResposta.appendChild(document.createElement("BR"));
+            divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\">Next</a> ";
+            divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\">Try Again</a> ";
+            divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\">Menu</a></div>";
+            divPopup.appendChild(divCaixaResposta);
             //loadHTMLOfQuestion(index+1); 
         }else {
-            divPopup.innerHTML = "<div id=\"caixaResposta\"><p>Você Venceu o Caça Bugs!</p></br><a href=\"#\" class=\"caixaRespostaButton\">Try Level Again</a> <a href=\"#\" class=\"caixaRespostaButton\">Menu</a></div>";
+            para = document.createElement("p");
+            para.appendChild(document.createTextNode("Você Venceu o Caça Bugs!"));
+            divCaixaResposta.appendChild(para);
+            divCaixaResposta.appendChild(document.createElement("BR"));
+            divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\">Try Level Again</a> ";
+            divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\">Menu</a></div>";
+            divPopup.appendChild(divCaixaResposta);
             //loadHTMLOfMenu();
         }
         document.body.appendChild(divPopup);
