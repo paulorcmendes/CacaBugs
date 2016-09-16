@@ -4,6 +4,8 @@ html{
 body{
     height: 93.5%;
     align-items: center;
+    background-image: url("pattern.png");
+    background-repeat: repeat;
 }
 div.desc{
     border-style: transparent;
@@ -24,9 +26,9 @@ div.tabs{
 }
 div.code{
     position: relative;
-    padding: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
     border-style: transparent;
-    width: 40%;
     float: left;
     white-space: pre;
     font-family: "Courier New", Courier, monospace;
@@ -46,8 +48,6 @@ div.input{
 }
 
 div.total{
-    /*margin-left: 10%;
-    margin-right: 10%;*/
     margin: 0 auto;
     margin-top: 2%;
     background: #4d4d4d;
@@ -171,6 +171,7 @@ div.total{
     font-family:Arial;
     font-size:16px;
     font-weight:bold;
+    float: right;
 }
 
 .variableInput {
