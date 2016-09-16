@@ -46,7 +46,7 @@ function loadHTMLOfQuestion(index) {
 
     html+= "<div class=\"tabs\">"
     for (var i = 0; i < code.length; i++) {
-    	html+= "  <a href=\"#\" onclick=\"openCode('"+code[i].getAttribute('language')+"');\">"+code[i].getAttribute('language')+"</a>";
+    	html+= "  <a href=\"#\" onclick=\"openCode('"+code[i].getAttribute('language')+"');\" class = \"buttonTab\">"+code[i].getAttribute('language')+"</a>";
     }
     html+= "</div>"
 
@@ -59,10 +59,10 @@ function loadHTMLOfQuestion(index) {
 
     html += "<div class=\"input\">";
     for (var i = 0; i < entry.length; i++) {
-    	html+= "<label>"+entry[i].childNodes[0].nodeValue+"</label>";
+    	html+= "<label>"+entry[i].childNodes[0].nodeValue+"</label> ";
     	html+= "<input type=\"text\" class = \"variableInput\" id=\"txt"+entry[i].childNodes[0].nodeValue+"\"><br>";
     }
-    html += "<input type=\"submit\" value=\"Submit\" onclick=\"test"+index+"()\">";
+    html += "<input type=\"submit\" class=\"submit\" value=\"Submit\" onclick=\"test"+index+"()\">";
 
     html += "</div>";
    	html += "<div class = \"result\" id = \"myResult\"> </div>";

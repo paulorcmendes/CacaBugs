@@ -1,33 +1,63 @@
+html{
+    height: 90%;
+}
+body{
+    height: 93.5%;
+    align-items: center;
+}
 div.desc{
-	border-style: transparent;
-	width: 40%;
-	margin-bottom: 3%;
+    border-style: transparent;
+    width: 80%;
+    margin-bottom: 3%;
+    font-family:Arial;
+    font-size:16px;
 }
 div.result{
-	border-style: transparent;
-	width: 16%;
-	height: 16%;
-	margin-left: 42%;
+    border-style: transparent;
+    width: 16%;
+    height: 16%;
+    margin-left: 42%;
+}
+div.tabs{
+    position: relative;
+    margin-bottom: -20px;
 }
 div.code{
-	border-style: solid;
-	width: 40%;
-	float: left;
-	white-space: pre;
-
+    position: relative;
+    padding: 10px;
+    border-style: transparent;
+    width: 40%;
+    float: left;
+    white-space: pre;
+    font-family: "Courier New", Courier, monospace;
+    font-size:13px;
+    border-radius:12px;    
+    background: #d9d9d9;
+    color: #001133;
 }
 
 div.input{
-	float: left;
-	margin-left: 10%;
+    float: left;
+    margin-left: 10%;
+    margin-bottom: 5%;
 }
 .input input{
-	margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 
 div.total{
-	margin-left: 5%;
-	margin-top: 2%;
+    /*margin-left: 10%;
+    margin-right: 10%;*/
+    margin: 0 auto;
+    margin-top: 2%;
+    background: #4d4d4d;
+    font-family:Arial;
+    font-size:12px;
+    color:#ffffff;
+    width: 70%;
+    height: 100%;
+    padding: 3%;
+    border-radius:20px 20px 0px 0px;
 }
 
 #overlay-back {
@@ -106,6 +136,83 @@ div.total{
     background-color:#6c7c7c;
 }
 .caixaRespostaButton:active {
+    position:relative;
+    top:1px;
+}
+
+.buttonTab {
+    background-color:#666666;
+    -moz-border-radius:28px;
+    -webkit-border-radius:28px;
+    border-radius:12px 12px 0px 0px;
+    border-style: transparent;
+    display:inline-block;
+    cursor:pointer;
+    color:#333333;
+    font-family:Arial;
+    font-size:17px;
+    font-weight:bold;
+    padding:22px 17px;
+    text-decoration:none;
+}
+.buttonTab:hover {
+    background-color:#a6a6a6;
+}
+.buttonTab:active {
+    position:relative;
+    top:1px;
+}
+
+.buttonTab:focus{
+    background-color:#d9d9d9;
+}
+
+.input{
+    font-family:Arial;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.variableInput {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 10px 10px;
+  border: 1px solid #b7b7b7;
+  border-right-width: 0;
+  -webkit-border-radius: 17px;
+  border-radius: 17px;
+  font: normal 13px/normal "Lucida Console", Monaco, monospace;
+  color: rgba(255,255,255,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgb(166, 166, 166);
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+}
+
+.submit {
+    background-color:#a6a6a6;
+    -moz-border-radius:28px;
+    -webkit-border-radius:28px;
+    border-radius:20px 20px 20px 20px;
+    border-style: transparent;
+    display:inline-block;
+    cursor:pointer;
+    color:#333333;
+    font-family:Arial;
+    font-size:17px;
+    font-weight:bold;
+    padding:8px 17px;
+    text-decoration:none;
+    margin-right: 0px;
+    float: right;
+}
+.submit:hover {
+    background-color:#e6e6e6;
+}
+.submit:active {
     position:relative;
     top:1px;
 }
