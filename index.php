@@ -15,8 +15,11 @@
 
 </head>
 <body>	
-	<script>
-	loadHTMLOfMenu();
-	</script>	
+	<div id = "divTotal" class="total">
+		<script>
+		loadHTMLOfMenu();
+		</script>	
+	</div>
+	<div id="overlay-back"></div>
 </body>
 </html>

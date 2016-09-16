@@ -32,6 +32,9 @@ function loadXMLDoc(dname){
     return xhttp.responseXML;
 }
 function loadHTMLOfQuestion(index) {
+    $(document).ready(function(){
+        $('#overlay, #overlay-back').fadeOut(500);                
+    });
     var html = "";
 	var x;    
     var question = dataBase.getElementsByTagName("question")[index];
@@ -39,9 +42,8 @@ function loadHTMLOfQuestion(index) {
     var code = question.getElementsByTagName("code");
     var entry = question.getElementsByTagName("entry");
     var test = question.getElementsByTagName("test")[0].childNodes[0].nodeValue;
-    var divBlack = document.createElement("DIV");
-    divBlack.id = "overlay-back";
-    html += "<div id = \"question\" class =  \"total\">";
+
+    html += "<div class = \"question\">";
     html += "<div class = \"desc\">"+description+"</div>";    
 
     html+= "<div class=\"tabs\">"
@@ -68,36 +70,33 @@ function loadHTMLOfQuestion(index) {
    	html += "<div class = \"result\" id = \"myResult\"> </div>";
     html += "</div>";	
 
-    document.body.innerHTML = html;
-    
-    document.body.appendChild(divBlack);    
+    document.getElementById("divTotal").innerHTML = html;   
     openCode(code[0].getAttribute('language'));
 }	
 
 function loadHTMLOfMenu(numberOfColumns){
+    $(document).ready(function(){
+        $('#overlay, #overlay-back').fadeOut(500);                
+    });
     if(numberOfColumns == null) numberOfColumns = 5;
     var questions = dataBase.getElementsByTagName("question");
-    var divTotal = document.createElement("DIV");
     var divIns = document.createElement("DIV");
     var divMenu = document.createElement("DIV");
     var table = document.createElement("TABLE");
     var actualRow;
     var iRow = 0;
     table.className = "tableMenu";
-    divTotal.className = "total";
     divIns.className = "instruction";
     divMenu.className = "menu";
+    divMenu.appendChild(divIns);
     for(var i = 0; i<questions.length; i++){
         if(i%numberOfColumns == 0) actualRow = table.insertRow(iRow++);
         actualRow.insertCell(i%numberOfColumns).innerHTML = "<button onclick = \"loadHTMLOfQuestion("+i+");\" class = \"menuQuestion\">Question "+(i+1)+"</button>";
     }
     divMenu.appendChild(table);
-    document.body.innerHTML = "";
-    divIns.innerHTML = "Select a Question";
-    divTotal.appendChild(divIns);
-    divTotal.appendChild(divMenu);
-
-    document.body.appendChild(divTotal);
+    divIns.innerHTML = "Select a Question";    
+    document.getElementById("divTotal").innerHTML = "";
+    document.getElementById("divTotal").appendChild(divMenu);
 }
 
 function reactToAnswer(result, index){
@@ -129,7 +128,7 @@ function reactToAnswer(result, index){
             divPopup.appendChild(divCaixaResposta);
             //loadHTMLOfMenu();
         }
-        document.body.appendChild(divPopup);
+        document.getElementById("divTotal").appendChild(divPopup);
         $(document).ready(function(){
             $('#overlay, #overlay-back').fadeIn(500);                
         });
