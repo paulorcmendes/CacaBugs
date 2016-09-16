@@ -67,26 +67,37 @@ function loadHTMLOfQuestion(index) {
     html += "</div>";
    	html += "<div class = \"result\" id = \"myResult\"> </div>";
     html += "</div>";	
+
     document.body.innerHTML = html;
-    document.body.appendChild(divBlack);
+    
+    document.body.appendChild(divBlack);    
     openCode(code[0].getAttribute('language'));
 }	
 
 function loadHTMLOfMenu(numberOfColumns){
     if(numberOfColumns == null) numberOfColumns = 5;
     var questions = dataBase.getElementsByTagName("question");
+    var divTotal = document.createElement("DIV");
+    var divIns = document.createElement("DIV");
     var divMenu = document.createElement("DIV");
     var table = document.createElement("TABLE");
     var actualRow;
     var iRow = 0;
+    table.className = "tableMenu";
+    divTotal.className = "total";
+    divIns.className = "instruction";
     divMenu.className = "menu";
     for(var i = 0; i<questions.length; i++){
         if(i%numberOfColumns == 0) actualRow = table.insertRow(iRow++);
-        actualRow.insertCell(i%numberOfColumns).innerHTML = "<button onclick = \"loadHTMLOfQuestion("+i+");\">Question "+(i+1)+"</button>";
+        actualRow.insertCell(i%numberOfColumns).innerHTML = "<button onclick = \"loadHTMLOfQuestion("+i+");\" class = \"menuQuestion\">Question "+(i+1)+"</button>";
     }
     divMenu.appendChild(table);
     document.body.innerHTML = "";
-    document.body.appendChild(divMenu);
+    divIns.innerHTML = "Select a Question";
+    divTotal.appendChild(divIns);
+    divTotal.appendChild(divMenu);
+
+    document.body.appendChild(divTotal);
 }
 
 function reactToAnswer(result, index){

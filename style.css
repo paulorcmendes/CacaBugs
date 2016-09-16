@@ -216,3 +216,48 @@ div.total{
     position:relative;
     top:1px;
 }
+
+.tableMenu{
+    width: 100%;
+    height: 100%;
+}
+.menu{
+    width: 80%;
+    height: 80%;
+    float: center;
+    margin: 0 auto;
+}
+.menuQuestion {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  -webkit-border-radius: 13px;
+  border-radius: 13px;
+  font: normal normal bold 16px/normal Arial, Helvetica, sans-serif;
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background-color: #416d7f;
+}
+
+.menuQuestion:hover{
+  background-color: #78a7ba;
+}
+
+.instruction{
+    position: relative;
+    font-family:Arial;
+    font-size:40px;
+    color:#ffffff;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 5%;
+}
