@@ -5,7 +5,7 @@ function generate(){
 	$html = "";
 	$html .= "var lastIndex = ".(sizeof($xml->children())-1).";";
 	foreach($xml->children() as $question) { 
-		$html .= " function test".$index."(){ var img; var flag = false;";
+		$html .= " function test".$index."(){var flag = false;";
 		$test = $question->test;
 		$code = $question->code;
 		$entry = $question->entry;
@@ -32,9 +32,9 @@ function generate(){
 				$html.= " var ".$variableName. " = document.getElementById(\"txt".$variableName."\").value;";
 			}
 	    }
-	    $html.="if(flag){ window.alert(\"Entrada Invalida\"); initValues(); img = \"\";}";
+	    $html.="if(flag){ window.alert(\"Entrada Invalida\"); initValues();}";
 
-		$html.="else{ if(correct".$index."(";
+		$html.="else{ reactToAnswer(correct".$index."(";
 		for ($i = 0; $i < sizeof($entry)-1; $i++) {
 			$html.= " ".$entry[$i] . ", ";
 		}
@@ -42,21 +42,13 @@ function generate(){
 		for ($i = 0; $i < sizeof($entry)-1; $i++) {
 			$html.= " ".$entry[$i] . ", ";
 		}
-		$html.= $entry[sizeof($entry)-1] . ")){";
-
-		//provisório
-		$html.= " if(".$index." != lastIndex){ loadHTMLOfQuestion(".($index+1)."); } else {window.alert(\"You Win\"); loadHTMLOfMenu();} return ; img = \"<img src= \'http://i.makeagif.com/media/11-15-2015/4lDs7n.gif\' alt=\'Result\' width=\'100%\' height=\'100%\'>\";";
-		///html+=" loadHTMLOfQuestion("+(index+1)+");";
-		$html.=" }else{ ";
-		$html.=" /*window.alert(\"Tente Novamente\");*/ initValues(); img = \"<img src=\'http://vandalsbucket.s3-sa-east-1.amazonaws.com/spree/products/45992/large/Errou.jpeg?1439700751\' alt=\'Result\' width=\'100%\' height=\'100%\'>\";";
-		$html.="} } document.getElementById(\"myResult\").innerHTML = img;}";
+		$html.= $entry[sizeof($entry)-1] . "),".$index." ); } }";
 
 		$html .= $test;		
 		
 		$myfile = fopen("scriptQuestions.js", "w") or die("Unable to open file!");
 		fwrite($myfile, $html);
 		fclose($myfile);
-		//echo $html;
 		$index++;
 	} 
 }

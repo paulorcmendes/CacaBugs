@@ -86,3 +86,22 @@ function loadHTMLOfMenu(numberOfColumns){
     document.body.innerHTML = "";
     document.body.appendChild(divMenu);
 }
+
+function reactToAnswer(result, index){
+    var img;
+    if(result){
+        if(index != lastIndex){ 
+            loadHTMLOfQuestion(index+1); 
+        }else {
+            window.alert("You Win");
+            loadHTMLOfMenu();
+        }
+        return ;
+        img = "<img src= \'http://i.makeagif.com/media/11-15-2015/4lDs7n.gif\' alt=\'Result\' width=\'100%\' height=\'100%\'>";
+    }else{
+        /*window.alert(\"Tente Novamente\");*/ 
+        initValues(); 
+        img = "<img src=\'http://vandalsbucket.s3-sa-east-1.amazonaws.com/spree/products/45992/large/Errou.jpeg?1439700751\' alt=\'Result\' width=\'100%\' height=\'100%\'>";
+    } 
+    document.getElementById("myResult").innerHTML = img;
+}
