@@ -46,10 +46,28 @@ div.input{
 .input input{
     margin-bottom: 5%;
 }
-
+.logo{
+    margin: 0 auto;
+    width: 60%;
+    background: rgb(230, 230, 230);
+    padding-top: 1%;
+    padding-bottom: 4%;
+    padding-left: 3%;
+    padding-right: 3%;
+    border-radius:20px 20px 0px 0px;
+}
+.imgLogo{
+    perspective: relative;
+    max-width: 50%;
+}
+.parceiro{
+    perspective: relative;
+    max-width: 20%;
+    float: right;
+}
 div.total{
     margin: 0 auto;
-    margin-top: 2%;
+    margin-top: -3%;
     background: #4d4d4d;
     font-family:Arial;
     font-size:12px;
