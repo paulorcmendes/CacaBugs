@@ -39,7 +39,8 @@ function loadHTMLOfQuestion(index) {
     var code = question.getElementsByTagName("code");
     var entry = question.getElementsByTagName("entry");
     var test = question.getElementsByTagName("test")[0].childNodes[0].nodeValue;
-    
+    var divBlack = document.createElement("DIV");
+    divBlack.id = "overlay-back";
     html += "<div id = \"question\" class =  \"total\">";
     html += "<div class = \"desc\">"+description+"</div>";    
 
@@ -67,6 +68,7 @@ function loadHTMLOfQuestion(index) {
    	html += "<div class = \"result\" id = \"myResult\"> </div>";
     html += "</div>";	
     document.body.innerHTML = html;
+    document.body.appendChild(divBlack);
     openCode(code[0].getAttribute('language'));
 }	
 
@@ -89,9 +91,17 @@ function loadHTMLOfMenu(numberOfColumns){
 
 function reactToAnswer(result, index){
     var img;
+    var divPopup = document.createElement("DIV");
+    divPopup.id = "overlay";
+    divPopup.innerHTML = "<img src = \"img.jpg\">";
+    
     if(result){
+        document.body.appendChild(divPopup);
         if(index != lastIndex){ 
-            loadHTMLOfQuestion(index+1); 
+            $(document).ready(function(){
+                $('#overlay, #overlay-back').fadeIn(500);                
+            });
+            //loadHTMLOfQuestion(index+1); 
         }else {
             window.alert("You Win");
             loadHTMLOfMenu();
