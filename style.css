@@ -37,13 +37,13 @@ div.code{
     background: #d9d9d9;
     color: #001133;
     max-height: 350px;
-    max-width: 300px;
+    max-width: 500px;
     overflow: auto;
 }
 
 div.input{
-    float: left;
-    margin-left: 10%;
+    position: inherit;
+    margin-right: 0%;
     margin-bottom: 5%;
 }
 .input input{
