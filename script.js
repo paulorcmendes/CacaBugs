@@ -93,19 +93,21 @@ function reactToAnswer(result, index){
     var img;
     var divPopup = document.createElement("DIV");
     divPopup.id = "overlay";
-    divPopup.innerHTML = "<img src = \"img.jpg\">";
     
-    if(result){
-        document.body.appendChild(divPopup);
+    
+    if(result){        
+
         if(index != lastIndex){ 
-            $(document).ready(function(){
-                $('#overlay, #overlay-back').fadeIn(500);                
-            });
+            divPopup.innerHTML = "<div id=\"caixaResposta\"><p>Você Passou de Nível!</p></br><a href=\"#\" class=\"caixaRespostaButton\">Next</a> <a href=\"#\" class=\"caixaRespostaButton\">Try Again</a> <a href=\"#\" class=\"caixaRespostaButton\">Menu</a></div>";
             //loadHTMLOfQuestion(index+1); 
         }else {
-            window.alert("You Win");
-            loadHTMLOfMenu();
+            divPopup.innerHTML = "<div id=\"caixaResposta\"><p>Você Venceu o Caça Bugs!</p></br><a href=\"#\" class=\"caixaRespostaButton\">Try Level Again</a> <a href=\"#\" class=\"caixaRespostaButton\">Menu</a></div>";
+            //loadHTMLOfMenu();
         }
+        document.body.appendChild(divPopup);
+        $(document).ready(function(){
+            $('#overlay, #overlay-back').fadeIn(500);                
+        });
         return ;
         img = "<img src= \'http://i.makeagif.com/media/11-15-2015/4lDs7n.gif\' alt=\'Result\' width=\'100%\' height=\'100%\'>";
     }else{
