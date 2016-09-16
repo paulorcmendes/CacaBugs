@@ -103,9 +103,9 @@ function reactToAnswer(result, index){
             para.appendChild(document.createTextNode("Você Passou de Nível!"));
             divCaixaResposta.appendChild(para);
             divCaixaResposta.appendChild(document.createElement("BR"));
-            divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\">Next</a> ";
-            divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\">Try Again</a> ";
-            divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\">Menu</a></div>";
+            divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfQuestion("+(index+1)+"); return false;\">Next</a> ";
+            divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfQuestion("+(index)+"); return false;\">Try Again</a> ";
+            divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfMenu(); return false;\">Menu</a></div>";
             divPopup.appendChild(divCaixaResposta);
             //loadHTMLOfQuestion(index+1); 
         }else {
@@ -113,8 +113,8 @@ function reactToAnswer(result, index){
             para.appendChild(document.createTextNode("Você Venceu o Caça Bugs!"));
             divCaixaResposta.appendChild(para);
             divCaixaResposta.appendChild(document.createElement("BR"));
-            divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\">Try Level Again</a> ";
-            divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\">Menu</a></div>";
+            divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfQuestion("+(index)+"); return false;\">Try Level Again</a> ";
+            divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfMenu(); return false;\">Menu</a></div>";
             divPopup.appendChild(divCaixaResposta);
             //loadHTMLOfMenu();
         }
