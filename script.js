@@ -58,7 +58,7 @@ function loadHTMLOfQuestion(index) {
     	html+= code[i].childNodes[0].nodeValue;
     	html+="</div>";
     }
-
+    html += "<input type=\"submit\" id = \"btnMenu\" class=\"submit\" value=\"Menu\" onclick=\"loadHTMLOfMenu();\">";
     html += "<div class=\"input\">";
     for (var i = 0; i < entry.length; i++) {
     	html+= "<label>"+entry[i].childNodes[0].nodeValue+"</label> ";
@@ -67,7 +67,7 @@ function loadHTMLOfQuestion(index) {
     html += "<input type=\"submit\" class=\"submit\" value=\"Submit\" onclick=\"test"+index+"()\">";
 
     html += "</div>";
-   	html += "<div class = \"result\" id = \"myResult\"> </div>";
+   	html += "<div class = \"result\" id = \"myResult\"> </div>";    
     html += "</div>";	
 
     document.getElementById("divTotal").innerHTML = html;   

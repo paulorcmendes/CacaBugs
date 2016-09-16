@@ -16,7 +16,7 @@
 </head>
 <body>	
 	<div class = "logo">
-	  <a href="index.php"><img class = "imgLogo" src="logo.png"></a>
+	  <a href=""><img class = "imgLogo" src="logo.png"></a>
 	  <a href="https://telemidiaufma.slack.com"><img class = "parceiro" src="parceiro.png"></a>
 	</div>
 	<div id = "divTotal" class="total">
