@@ -44,6 +44,7 @@ function loadHTMLOfQuestion(index) {
     var test = question.getElementsByTagName("test")[0].childNodes[0].nodeValue;
 
     html += "<div class = \"question\">";
+    html += "<div class = \"titleQuestion\">Question "+(index+1)+"</br></div>";
     html += "<div class = \"desc\">"+description+"</div>";    
 
     html+= "<div class=\"tabs\">"
