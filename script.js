@@ -147,3 +147,25 @@ function reactToAnswer(result, index){
         $('#overlay, #overlay-back').fadeIn(500);                
     });
 }
+
+function entradaInvalida(id){
+    $( "#txt"+id).css( "background", "red" );
+}
+
+function resultadoInvalido(index){
+    var divPopup = document.createElement("DIV");
+    divPopup.id = "overlay";
+    var divCaixaResposta = document.createElement("DIV");
+    divCaixaResposta.id = "caixaResposta";
+    para = document.createElement("p");
+    para.appendChild(document.createTextNode("Entrada Inválida! Verifique as Marcações em Vermelho"));
+    divCaixaResposta.appendChild(para);
+    divCaixaResposta.appendChild(document.createElement("BR"));
+    divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfQuestion("+(index)+"); return false;\">Try Again</a> ";
+    divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfMenu(); return false;\">Menu</a></div>";
+    divPopup.appendChild(divCaixaResposta);
+    document.getElementById("divTotal").appendChild(divPopup);
+    $(document).ready(function(){
+        $('#overlay, #overlay-back').fadeIn(500);                
+    });
+}
