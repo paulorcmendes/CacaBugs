@@ -103,11 +103,12 @@ function reactToAnswer(result, index){
     var img;
     var divPopup = document.createElement("DIV");
     divPopup.id = "overlay";
+    var divCaixaResposta = document.createElement("DIV");
+    divCaixaResposta.id = "caixaResposta";
     
     
     if(result){        
-        var divCaixaResposta = document.createElement("DIV");
-        divCaixaResposta.id = "caixaResposta";
+        
         if(index != lastIndex){ 
             para = document.createElement("p");
             para.appendChild(document.createTextNode("Você Passou de Nível!"));
@@ -127,17 +128,22 @@ function reactToAnswer(result, index){
             divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfMenu(); return false;\">Menu</a></div>";
             divPopup.appendChild(divCaixaResposta);
             //loadHTMLOfMenu();
-        }
-        document.getElementById("divTotal").appendChild(divPopup);
-        $(document).ready(function(){
-            $('#overlay, #overlay-back').fadeIn(500);                
-        });
-        return ;
-        img = "<img src= \'http://i.makeagif.com/media/11-15-2015/4lDs7n.gif\' alt=\'Result\' width=\'100%\' height=\'100%\'>";
+        }  
+        
     }else{
         /*window.alert(\"Tente Novamente\");*/ 
         initValues(); 
-        img = "<img src=\'http://vandalsbucket.s3-sa-east-1.amazonaws.com/spree/products/45992/large/Errou.jpeg?1439700751\' alt=\'Result\' width=\'100%\' height=\'100%\'>";
+        para = document.createElement("p");
+        para.appendChild(document.createTextNode("Resposta Errada!"));
+        divCaixaResposta.appendChild(para);
+        divCaixaResposta.appendChild(document.createElement("BR"));
+        divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfQuestion("+(index)+"); return false;\">Try Again</a> ";
+        divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfMenu(); return false;\">Menu</a></div>";
+        divPopup.appendChild(divCaixaResposta);
+        
     } 
-    document.getElementById("myResult").innerHTML = img;
+    document.getElementById("divTotal").appendChild(divPopup);
+    $(document).ready(function(){
+        $('#overlay, #overlay-back').fadeIn(500);                
+    });
 }
