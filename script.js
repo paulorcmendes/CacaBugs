@@ -1,5 +1,6 @@
 var xmlDoc = loadXMLDoc("question.xml"); 
 var dataBase = xmlDoc.getElementsByTagName("dataBase")[0];
+var atualQuestion = 0;
 
 function openCode(language){		
 	var i;
@@ -90,8 +91,11 @@ function loadHTMLOfMenu(numberOfColumns){
     divMenu.className = "menu";
     divMenu.appendChild(divIns);
     for(var i = 0; i<questions.length; i++){
+        var status = "";
         if(i%numberOfColumns == 0) actualRow = table.insertRow(iRow++);
-        actualRow.insertCell(i%numberOfColumns).innerHTML = "<button onclick = \"loadHTMLOfQuestion("+i+");\" class = \"menuQuestion\">Question "+(i+1)+"</button>";
+        if(i>atualQuestion) status = "disabled";
+        else status = "";
+        actualRow.insertCell(i%numberOfColumns).innerHTML = "<button onclick = \"loadHTMLOfQuestion("+i+");\" class = \"menuQuestion\" "+status+">Question "+(i+1)+"</button>";
     }
     divMenu.appendChild(table);
     divIns.innerHTML = "Select a Question";    
@@ -129,7 +133,9 @@ function reactToAnswer(result, index){
             divPopup.appendChild(divCaixaResposta);
             //loadHTMLOfMenu();
         }  
-        
+        if(index>=atualQuestion){
+            atualQuestion = index+1;
+        }
     }else{
         /*window.alert(\"Tente Novamente\");*/ 
         initValues(); 

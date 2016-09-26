@@ -301,6 +301,28 @@ div.total{
   background-color: #416d7f;
 }
 
+.menuQuestion:disabled {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  -webkit-border-radius: 13px;
+  border-radius: 13px;
+  font: normal normal bold 16px/normal Arial, Helvetica, sans-serif;
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background-color: #cddee5;
+  pointer-events: none;
+}
+
 .menuQuestion:hover{
   background-color: #78a7ba;
 }
