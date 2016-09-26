@@ -95,10 +95,10 @@ function loadHTMLOfMenu(numberOfColumns){
         if(i%numberOfColumns == 0) actualRow = table.insertRow(iRow++);
         if(i>atualQuestion) status = "disabled";
         else status = "";
-        actualRow.insertCell(i%numberOfColumns).innerHTML = "<button onclick = \"loadHTMLOfQuestion("+i+");\" class = \"menuQuestion\" "+status+">Question "+(i+1)+"</button>";
+        actualRow.insertCell(i%numberOfColumns).innerHTML = "<button onclick = \"loadHTMLOfQuestion("+i+");\" class = \"menuQuestion\" "+status+">Questão "+(i+1)+"</button>";
     }
     divMenu.appendChild(table);
-    divIns.innerHTML = "Select a Question";    
+    divIns.innerHTML = "Selecione uma Questão";    
     document.getElementById("divTotal").innerHTML = "";
     document.getElementById("divTotal").appendChild(divMenu);
 }

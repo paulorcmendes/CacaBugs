@@ -299,6 +299,10 @@ div.total{
   -o-text-overflow: clip;
   text-overflow: clip;
   background-color: #416d7f;
+
+  
+
+  
 }
 
 .menuQuestion:disabled {
@@ -319,7 +323,12 @@ div.total{
   text-align: center;
   -o-text-overflow: clip;
   text-overflow: clip;
+  
   background-color: #cddee5;
+  background-image: url("locked.png"); 
+  background-size: 30% 30%;
+  background-repeat: no-repeat;
+  background-position: left top;
   pointer-events: none;
 }
 

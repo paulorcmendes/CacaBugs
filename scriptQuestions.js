@@ -16,7 +16,7 @@ var lastIndex = 19; function test0(){var flag = false; var flagI = false;  flagI
       function wrong1(age){
       return age > 18;
       }
-     function test2(){var flag = false; var flagI = false;  flagI = false;  var A = document.getElementById("txtA").value;if (A == "") { flag = true; flagI = true;} var A = Number(document.getElementById("txtA").value);if (isNaN(A) || !Number.isInteger(A)) { flag = true; flagI = true;} if(flagI == true) entradaInvalida("A"); flagI = false;  var B = document.getElementById("txtB").value;if (B == "") { flag = true; flagI = true;} var B = Number(document.getElementById("txtB").value);if (isNaN(B) || !Number.isInteger(B)) { flag = true; flagI = true;} if(flagI == true) entradaInvalida("B");if(flag){ resultadoInvalido(2); }else{ reactToAnswer(correct2( A, B) != wrong2( A, B),2 ); } }
+     function test2(){var flag = false; var flagI = false;  flagI = false;  var a = document.getElementById("txta").value;if (a == "") { flag = true; flagI = true;} var a = Number(document.getElementById("txta").value);if (isNaN(a) || !Number.isInteger(a)) { flag = true; flagI = true;} if(flagI == true) entradaInvalida("a"); flagI = false;  var b = document.getElementById("txtb").value;if (b == "") { flag = true; flagI = true;} var b = Number(document.getElementById("txtb").value);if (isNaN(b) || !Number.isInteger(b)) { flag = true; flagI = true;} if(flagI == true) entradaInvalida("b");if(flag){ resultadoInvalido(2); }else{ reactToAnswer(correct2( a, b) != wrong2( a, b),2 ); } }
       function correct2(a, b){
       return a+b
       }
