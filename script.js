@@ -45,7 +45,7 @@ function loadHTMLOfQuestion(index) {
     var test = question.getElementsByTagName("test")[0].childNodes[0].nodeValue;
     html += "<input type=\"submit\" class = \"btnMenu\" value=\"Menu\" onclick=\"loadHTMLOfMenu();\">";
     html += "<div class = \"question\">";
-    html += "<div class = \"titleQuestion\">Question "+(index+1)+"</div>";
+    html += "<div class = \"titleQuestion\">Questão "+(index+1)+"</div>";
     html += "<div class = \"desc\">"+description+"</div>";    
 
     html+= "<div class=\"tabs\">"
