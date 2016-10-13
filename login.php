@@ -21,7 +21,7 @@
          //session_register("myusername");
          $_SESSION['login_user'] = $myusername;
          
-         header("location: welcome.php");
+         header("location: index.php");
       }else {
          $error = "Your Login Name or Password is invalid";
       }
@@ -45,7 +45,22 @@
          }
          
          .box {
-            border:#666666 solid 1px;
+            display: inline-block;
+           -webkit-box-sizing: content-box;
+           -moz-box-sizing: content-box;
+           box-sizing: content-box;
+           padding: 10px 10px;
+           border: 1px solid #b7b7b7;
+           border-right-width: 0;
+           -webkit-border-radius: 17px;
+           border-radius: 17px;
+           font: normal 13px/normal "Lucida Console", Monaco, monospace;
+           color: rgba(255,255,255,1);
+           -o-text-overflow: clip;
+           text-overflow: clip;
+           background: rgb(166, 166, 166);
+           -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+           box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
          }
       </style>
       
