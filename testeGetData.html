@@ -1,35 +1,32 @@
 <html>
 <head>
-<script>
-function showUser() {
-    str = "mendes";
-    if (str == "") {
-        document.getElementById("txtHint").innerHTML = "";
-        return;
-    } else { 
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("response").innerHTML = this.responseText;
-            }
-        };
-        xmlhttp.open("GET","getuser.php?q="+str,true);
-        xmlhttp.send();
-    }
-}
-</script>
 </head>
 <body>
 
-<form>
-<button onclick="showUser();">Clica Ae</button>
+<button id='clicaae'>Clica Ae</button>
 <div id="response"><b>Nome do garoto</b></div>
 
 </body>
+<script   src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+<script>
+var nome;
+$(document).ready(function() {
+    console.log(window.localStorage.getItem("questionposition"));
+    window.localStorage.setItem("questionposition", 50);
+
+    $("#clicaae").click(function() {
+
+        $.getJSON( "getuser.php", function(retorno) {
+            for(iLaco = 0; iLaco < retorno.length; iLaco++) {
+                var objeto = (retorno[iLaco]);
+                console.log(objeto.nome);
+
+            }
+        }).fail(function() {
+            console.log("falhou")
+        });
+
+    });
+});
+</script>
 </html>
