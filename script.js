@@ -1,6 +1,19 @@
 var xmlDoc = loadXMLDoc("question.xml"); 
 var dataBase = xmlDoc.getElementsByTagName("dataBase")[0];
 var atualQuestion = 0;
+loadHTMLOfMenu();
+
+function getLastQuestion(){
+    $.getJSON( "getQuestion.php", function(retorno) {
+        for(i = 0; i < retorno.length; i++) {
+            var objeto = (retorno[i]);
+            atualQuestion = Number(objeto.question);
+        }
+    }).fail(function() {
+        console.log("falhou")
+    });
+
+}
 
 function openCode(language){		
 	var i;
@@ -76,6 +89,7 @@ function loadHTMLOfQuestion(index) {
 }	
 
 function loadHTMLOfMenu(numberOfColumns){
+    
     $(document).ready(function(){
         $('#overlay, #overlay-back').fadeOut(500);                
     });
@@ -176,13 +190,3 @@ function resultadoInvalido(index){
     });
 }
 
-function getLastQuestion(){
-    $.getJSON( "getQuestion.php", function(retorno) {
-        for(i = 0; i < retorno.length; i++) {
-            var objeto = (retorno[i]);
-            atualQuestion = objeto.question;
-        }
-    }).fail(function() {
-        console.log("falhou")
-    });
-}
