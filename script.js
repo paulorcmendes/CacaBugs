@@ -175,3 +175,14 @@ function resultadoInvalido(index){
         $('#overlay, #overlay-back').fadeIn(500);                
     });
 }
+
+function getLastQuestion(){
+    $.getJSON( "getQuestion.php", function(retorno) {
+        for(i = 0; i < retorno.length; i++) {
+            var objeto = (retorno[i]);
+            atualQuestion = objeto.question;
+        }
+    }).fail(function() {
+        console.log("falhou")
+    });
+}

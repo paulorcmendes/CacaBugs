@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     $("#clicaae").click(function() {
 
-        $.getJSON( "getuser.php", function(retorno) {
+        $.getJSON( "getQuestion.php", function(retorno) {
             for(iLaco = 0; iLaco < retorno.length; iLaco++) {
                 var objeto = (retorno[iLaco]);
                 console.log(objeto.nome);
