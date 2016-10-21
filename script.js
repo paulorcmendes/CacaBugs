@@ -17,6 +17,17 @@ function getLastQuestion(){
 
 }
 
+function setLastQuestion(){
+    $.ajax({
+        type: "POST",
+        url: "sendData.php",
+        data:{currentQuestion: atualQuestion},
+        success: function(data){
+            console.log(data);
+        }
+    });
+}
+
 function openCode(language){		
 	var i;
 	var x = document.getElementsByClassName("code");
@@ -151,6 +162,7 @@ function reactToAnswer(result, index){
         }  
         if(index>=atualQuestion){
             atualQuestion = index+1;
+            setLastQuestion();
         }
     }else{
         /*window.alert(\"Tente Novamente\");*/ 
