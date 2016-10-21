@@ -1,13 +1,15 @@
 var xmlDoc = loadXMLDoc("question.xml"); 
 var dataBase = xmlDoc.getElementsByTagName("dataBase")[0];
 var atualQuestion = 0;
-loadHTMLOfMenu();
+getLastQuestion();
 
 function getLastQuestion(){
     $.getJSON( "getQuestion.php", function(retorno) {
         for(i = 0; i < retorno.length; i++) {
             var objeto = (retorno[i]);
             atualQuestion = Number(objeto.question);
+            console.log(atualQuestion);
+            loadHTMLOfMenu();
         }
     }).fail(function() {
         console.log("falhou")
