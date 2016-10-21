@@ -20,6 +20,8 @@ $(document).ready(function() {
             for(iLaco = 0; iLaco < retorno.length; iLaco++) {
                 var objeto = (retorno[iLaco]);
                 console.log(objeto.nome);
+                nome = objeto.nome;
+                $("#response").html(nome);
 
             }
         }).fail(function() {
