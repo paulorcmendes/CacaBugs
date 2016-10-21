@@ -11,8 +11,8 @@
 <script>
 var nome;
 $(document).ready(function() {
-    console.log(window.localStorage.getItem("questionposition"));
-    window.localStorage.setItem("questionposition", 50);
+    //console.log(window.localStorage.getItem("questionposition"));
+    //window.localStorage.setItem("questionposition", 50);
 
     $("#clicaae").click(function() {
 
@@ -28,6 +28,15 @@ $(document).ready(function() {
             console.log("falhou")
         });
 
+
+        $.ajax({
+            type: "POST",
+            url: "sendData.php",
+            data:{currentQuestion: 9},
+            success: function(data){
+                console.log(data);
+            }
+        });
     });
 });
 </script>
