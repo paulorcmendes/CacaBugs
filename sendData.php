@@ -9,7 +9,7 @@ $con = mysqli_connect('localhost','root','','caca_bugs');
 if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
-$user_check = $login_session;
+$user_check = $login_session["user"];
 $sql = "UPDATE user SET question = ".$question." WHERE email = '$user_check'";
 
 if (mysqli_query($con, $sql)) {

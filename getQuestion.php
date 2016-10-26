@@ -6,7 +6,7 @@ if (!$con) {
 }
 
 mysqli_select_db($con,"ajax_demo");
-$user_check = $login_session;
+$user_check = $login_session["user"];
 $sql="SELECT * FROM user WHERE email = '$user_check'";
 $result = mysqli_query($con,$sql);
 
