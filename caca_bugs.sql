@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Out-2016 às 15:50
+-- Generation Time: 04-Nov-2016 às 13:36
 -- Versão do servidor: 10.1.13-MariaDB
 -- PHP Version: 7.0.6
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `log` (
   `id` int(11) NOT NULL,
   `id_user` int(200) NOT NULL,
-  `time` varchar(200) NOT NULL,
+  `data` date NOT NULL,
   `right` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
