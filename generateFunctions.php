@@ -1,6 +1,6 @@
 <?php
 function generate(){
-	//if(!file_exists ("scriptQuestions.js")){
+	if(!file_exists ("scriptQuestions.js")){
 		$xml=simplexml_load_file("question.xml") or die("Error: Cannot create object");
 		$index = 0;
 		$html = "";
@@ -63,6 +63,6 @@ function generate(){
 			fclose($myfile);
 			$index++;
 		} 
-	//}
+	}
 }
 ?>
