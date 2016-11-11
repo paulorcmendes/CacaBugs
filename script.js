@@ -3,11 +3,11 @@ var dataBase = xmlDoc.getElementsByTagName("dataBase")[0];
 var atualQuestion = 0;
 getLastQuestion();
 
-function saveLog(result, index){
+function saveLog(result, index, entries){
     $.ajax({
         type: "POST",
         url: "send_log.php",
-        data:{right:result, question: index},
+        data:{right:result, question: index, sendEntries: entries},
         success: function(data){
             console.log(data);
         }
@@ -149,7 +149,7 @@ function reactToAnswer(result, index, entries){
     var divCaixaResposta = document.createElement("DIV");
     divCaixaResposta.id = "caixaResposta";
     
-    window.alert(entries);
+    //window.alert(entries);
     if(result){        
         
         if(index != lastIndex){ 
@@ -176,7 +176,7 @@ function reactToAnswer(result, index, entries){
             atualQuestion = index+1;
             setLastQuestion();            
         }
-        saveLog("true", index);
+        saveLog("true", index, entries);
     }else{
         /*window.alert(\"Tente Novamente\");*/ 
         initValues(); 
@@ -187,7 +187,7 @@ function reactToAnswer(result, index, entries){
         divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfQuestion("+(index)+"); return false;\">Try Again</a> ";
         divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfMenu(); return false;\">Menu</a></div>";
         divPopup.appendChild(divCaixaResposta);
-        saveLog("false", index);
+        saveLog("false", index, entries);
     } 
     document.getElementById("divTotal").appendChild(divPopup);
     $(document).ready(function(){
