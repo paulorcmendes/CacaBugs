@@ -192,7 +192,7 @@ var lastIndex = 19; function test0(){var flag = false; var flagI = false;  flagI
         }
         return 0;
       }
-     function test15(){var flag = false; var flagI = false;  flagI = false;  var a = document.getElementById("txta").value;if (a == "") { flag = true;  flagI = true;} var a = Number(document.getElementById("txta").value);if (isNaN(a)) { flag = true;  flagI = true;} if(flagI == true) entradaInvalida(a); flagI = false;  var b = document.getElementById("txtb").value;if (b == "") { flag = true;  flagI = true;} var b = Number(document.getElementById("txtb").value);if (isNaN(b)) { flag = true;  flagI = true;} if(flagI == true) entradaInvalida(b); flagI = false;  var c = document.getElementById("txtc").value;if (c == "") { flag = true;  flagI = true;} var c = Number(document.getElementById("txtc").value);if (isNaN(c)) { flag = true;  flagI = true;} if(flagI == true) entradaInvalida(c);if(flag){ resultadoInvalido(15); }else{ reactToAnswer(correct15( a,  b, c) != wrong15( a,  b, c),15,"a: "+a+"; "+"b: "+b+"; "+"c: " +c ); } }
+     function test15(){var flag = false; var flagI = false;  flagI = false;  var a = document.getElementById("txta").value;if (a == "") { flag = true;  flagI = true;} var a = Number(document.getElementById("txta").value);if (isNaN(a)) { flag = true;  flagI = true;} if(flagI == true) entradaInvalida("a"); flagI = false;  var b = document.getElementById("txtb").value;if (b == "") { flag = true;  flagI = true;} var b = Number(document.getElementById("txtb").value);if (isNaN(b)) { flag = true;  flagI = true;} if(flagI == true) entradaInvalida("b"); flagI = false;  var c = document.getElementById("txtc").value;if (c == "") { flag = true;  flagI = true;} var c = Number(document.getElementById("txtc").value);if (isNaN(c)) { flag = true;  flagI = true;} if(flagI == true) entradaInvalida("c");if(flag){ resultadoInvalido(15); }else{ reactToAnswer(correct15( a,  b, c) != wrong15( a,  b, c),15,"a: "+a+"; "+"b: "+b+"; "+"c: " +c ); } }
       function correct15(a, b, c){
         //delta = 0;
         delta = (b*b)-4*a*c;
@@ -240,7 +240,7 @@ var lastIndex = 19; function test0(){var flag = false; var flagI = false;  flagI
         }
         return n;
       }
-     function test18(){var flag = false; var flagI = false;  flagI = false;  var v = document.getElementById("txtv").value.split(" ");  for(i = 0; i < v.length; i++){  if(v[i] == " " || v[i] == ""){ flag = true;  flagI = true; break;} v[i] = Number(v[i]);  if(isNaN(v[i])) { flag = true;  flagI = true; break; } }  if(flagI == true) entradaInvalida(v);if(flag){ resultadoInvalido(18); }else{ reactToAnswer(correct18(v) != wrong18(v),18,"v: " +v ); } }
+     function test18(){var flag = false; var flagI = false;  flagI = false;  var v = document.getElementById("txtv").value.split(" ");  for(i = 0; i < v.length; i++){  if(v[i] == " " || v[i] == ""){ flag = true;  flagI = true; break;} v[i] = Number(v[i]);  if(isNaN(v[i])) { flag = true;  flagI = true; break; } }  if(flagI == true) entradaInvalida("v");if(flag){ resultadoInvalido(18); }else{ reactToAnswer(correct18(v) != wrong18(v),18,"v: " +v ); } }
       function correct18(v){
         maior = v[0];
         for (i = 1; i < 5; i++){

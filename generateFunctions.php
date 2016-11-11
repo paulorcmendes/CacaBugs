@@ -24,7 +24,7 @@ function generate(){
 					$html.= "if (".$variableName." == \"\") { flag = true;  flagI = true;}";
 					$html.= " var ".$variableName. " = Number(document.getElementById(\"txt".$variableName."\").value);";
 					$html.= "if (isNaN(".$variableName.")) { flag = true;  flagI = true;}";
-					$html.= " if(flagI == true) entradaInvalida(" . $variableName.");";
+					$html.= " if(flagI == true) entradaInvalida(\"" . $variableName."\");";
 				}else if($type == "vector"){
 					$html.= " var ".$variableName. " = document.getElementById(\"txt".$variableName."\").value.split(\" \"); ";
 					$html.= " for(i = 0; i < ".$variableName.".length; i++){ ";
@@ -32,7 +32,7 @@ function generate(){
 					$html.= "flag = true;  flagI = true; break;} ";
 					$html.= $variableName."[i] = Number(".$variableName."[i]); ";
 					$html.= " if(isNaN(".$variableName."[i])) { flag = true;  flagI = true; break; } } ";
-					$html.= " if(flagI == true) entradaInvalida(" . $variableName.");";
+					$html.= " if(flagI == true) entradaInvalida(\"" . $variableName."\");";
 				}else{
 					$html.= " var ".$variableName. " = document.getElementById(\"txt".$variableName."\").value;";
 				}
