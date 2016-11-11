@@ -83,7 +83,7 @@ function loadHTMLOfQuestion(index) {
     var test = question.getElementsByTagName("test")[0].childNodes[0].nodeValue;
     html += "<input type=\"submit\" class = \"btnMenu\" value=\"Menu\" onclick=\"loadHTMLOfMenu();\">";
     html += "<div class = \"question\">";
-    html += "<div class = \"titleQuestion\">Questão "+(index+1)+"</div>";
+    html += "<div class = \"titleQuestion\">Questão "+(index)+"</div>";
     html += "<div class = \"desc\">"+description+"</div>";    
 
     html+= "<div class=\"tabs\">"
@@ -134,7 +134,7 @@ function loadHTMLOfMenu(numberOfColumns){
         if(i%numberOfColumns == 0) actualRow = table.insertRow(iRow++);
         if(i>atualQuestion) status = "disabled";
         else status = "";
-        actualRow.insertCell(i%numberOfColumns).innerHTML = "<button onclick = \"loadHTMLOfQuestion("+i+");\" class = \"menuQuestion\" "+status+">Questão "+(i+1)+"</button>";
+        actualRow.insertCell(i%numberOfColumns).innerHTML = "<button onclick = \"loadHTMLOfQuestion("+i+");\" class = \"menuQuestion\" "+status+">Questão "+(i)+"</button>";
     }
     divMenu.appendChild(table);
     divIns.innerHTML = "Selecione uma Questão";    
