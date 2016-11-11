@@ -1,8 +1,8 @@
 <?php
 include('session.php');
-$right = true;
-if(isset($_POST["right"])){
-	$right = ($_POST["right"] == "true");
+$right = "false";
+if(isset($_POST["right"]) && ($_POST["right"] == "true")){
+	$right = "true";
 }
 $question = 0;
 if(isset($_POST['question'])){
@@ -15,10 +15,10 @@ if (!$con) {
 }
 $id_user = $login_session["id"];
 
-$sql = "INSERT INTO user (id_user, data, right, question) values (".$id_user.", NOW(),".$right.",".$question."); ";
+$sql = "INSERT INTO log(id_user, isRight, question) values (".$id_user.", ".$right.",".$question."); ";
 
 if (mysqli_query($con, $sql)) {
-    echo "Record updated successfully";
+    echo "Record inserted successfully";
 } else {
     echo "Error updating record: " . mysqli_error($con);
 }

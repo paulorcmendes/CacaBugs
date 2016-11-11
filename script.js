@@ -3,6 +3,18 @@ var dataBase = xmlDoc.getElementsByTagName("dataBase")[0];
 var atualQuestion = 0;
 getLastQuestion();
 
+function saveLog(result, index){
+    $.ajax({
+        type: "POST",
+        url: "send_log.php",
+        data:{right:result, question: index},
+        success: function(data){
+            console.log(data);
+        }
+    }
+    );
+}
+
 function getLastQuestion(){
     $.getJSON( "getQuestion.php", function(retorno) {
         for(i = 0; i < retorno.length; i++) {
@@ -162,8 +174,9 @@ function reactToAnswer(result, index){
         }  
         if(index>=atualQuestion){
             atualQuestion = index+1;
-            setLastQuestion();
+            setLastQuestion();            
         }
+        saveLog("true", index);
     }else{
         /*window.alert(\"Tente Novamente\");*/ 
         initValues(); 
@@ -174,7 +187,7 @@ function reactToAnswer(result, index){
         divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfQuestion("+(index)+"); return false;\">Try Again</a> ";
         divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfMenu(); return false;\">Menu</a></div>";
         divPopup.appendChild(divCaixaResposta);
-        
+        saveLog("false", index);
     } 
     document.getElementById("divTotal").appendChild(divPopup);
     $(document).ready(function(){
