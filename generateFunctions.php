@@ -1,6 +1,6 @@
 <?php
 function generate(){
-	if(!file_exists ("scriptQuestions.js")){
+	//if(!file_exists ("scriptQuestions.js")){
 		$xml=simplexml_load_file("question.xml") or die("Error: Cannot create object");
 		$index = 0;
 		$html = "";
@@ -47,15 +47,22 @@ function generate(){
 			for ($i = 0; $i < sizeof($entry)-1; $i++) {
 				$html.= " ".$entry[$i] . ", ";
 			}
-			$html.= $entry[sizeof($entry)-1] . "),".$index." ); } }";
+			$html.= $entry[sizeof($entry)-1] . "),".$index.",";
+			//generateMsgToLog
+			for ($i = 0; $i < sizeof($entry)-1; $i++) {
+				$html.= "\"".$entry[$i].": \"+".$entry[$i] . "+\"; \"+";
+			}
+			$html.= "\"".$entry[sizeof($entry)-1].": \" +".$entry[sizeof($entry)-1];
 
-			$html .= $test;		
+			$html.= " ); } }";
+
+			$html.= $test;	
 			
 			$myfile = fopen("scriptQuestions.js", "w") or die("Unable to open file!");
 			fwrite($myfile, $html);
 			fclose($myfile);
 			$index++;
 		} 
-	}
+	//}
 }
 ?>

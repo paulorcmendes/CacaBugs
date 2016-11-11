@@ -142,14 +142,14 @@ function loadHTMLOfMenu(numberOfColumns){
     document.getElementById("divTotal").appendChild(divMenu);
 }
 
-function reactToAnswer(result, index){
+function reactToAnswer(result, index, entries){
     var img;
     var divPopup = document.createElement("DIV");
     divPopup.id = "overlay";
     var divCaixaResposta = document.createElement("DIV");
     divCaixaResposta.id = "caixaResposta";
     
-    
+    window.alert(entries);
     if(result){        
         
         if(index != lastIndex){ 
