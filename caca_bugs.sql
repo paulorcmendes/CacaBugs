@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Nov 11, 2016 at 02:27 
+-- Host: 127.0.0.1
+-- Generation Time: Nov 11, 2016 at 09:53 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -31,20 +31,16 @@ CREATE TABLE `log` (
   `id_user` int(200) NOT NULL,
   `sendDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `isRight` tinyint(1) NOT NULL DEFAULT '0',
-  `question` int(11) NOT NULL
+  `question` int(11) NOT NULL,
+  `entries` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `log`
 --
 
-INSERT INTO `log` (`id`, `id_user`, `sendDate`, `isRight`, `question`) VALUES
-(2, 1, '2016-11-11 10:15:43', 1, 1),
-(3, 1, '2016-11-11 10:16:45', 0, 4),
-(4, 1, '2016-11-11 10:19:09', 1, 1),
-(5, 1, '2016-11-11 10:19:35', 0, 0),
-(6, 3, '2016-11-11 10:20:31', 1, 0),
-(7, 3, '2016-11-11 10:20:38', 1, 1);
+INSERT INTO `log` (`id`, `id_user`, `sendDate`, `isRight`, `question`, `entries`) VALUES
+(8, 1, '2016-11-11 17:51:29', 1, 2, 'a: 5; b: 5');
 
 -- --------------------------------------------------------
 
@@ -93,7 +89,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `log`
 --
 ALTER TABLE `log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `user`
 --
