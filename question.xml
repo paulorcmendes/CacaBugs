@@ -2,38 +2,57 @@
 <dataBase>
   <question>
     <description>
-      O código abaixo deveria retornar: 0, se o número é par; 1, se o número é ímpar.
+      Carlos possui dois irmãos: Pedro e Welton. Carlos quer saber quantos irmãos são mais novos que ele.
     </description>
     
     <code language = 'Lua'>
-function paridade(num)
-  return num
+function irmaosCarlos(carlos, pedro, welton)
+  if pedro &lt; carlos then
+    if welton &lt; carlos then
+      return 2
+    end
+    return 1
+  end
+  return 0
 end
     </code>
     
     <code language = 'c'>
-int paridade(int num){
-  return num;
+int irmaosCarlos(int carlos, int pedro, int welton){
+  if (pedro &lt; carlos) {
+    if (welton &lt; carlos){
+      return 2;
+    }
+    return 1;
+  }
+  return 0;
 }
     </code>  
 
-    <code language = 'Python'>
-def changeme(num):
-  return num
-    </code>
 
-    <entry type = 'int'>Num</entry>
+    <entry type = 'int'>carlos</entry>
+    <entry type = 'int'>pedro</entry>
+    <entry type = 'int'>welton</entry>
 
     <test>
-      function correct0(num){
-      if(num%2==0){
+      function correct0(carlos, pedro, welton){
+        var cont = 0;
+        if (pedro &lt; carlos) {
+          cont++;
+        }
+        if (welton &lt; carlos) {
+          cont++;
+        }
+        return cont;
+      }
+      function wrong0(carlos, pedro, welton){
+      if (pedro &lt; carlos) {
+        if (welton &lt; carlos){
+          return 2;
+        }
+        return 1;
+      }
       return 0;
-      }else{
-      return 1;
-      }
-      }
-      function wrong0(num){
-      return num;
       }
     </test>
   </question>

@@ -1,13 +1,22 @@
-var lastIndex = 19; function test0(){var flag = false; var flagI = false;  flagI = false;  var Num = document.getElementById("txtNum").value;if (Num == "") { flag = true; flagI = true;} var Num = Number(document.getElementById("txtNum").value);if (isNaN(Num) || !Number.isInteger(Num)) { flag = true; flagI = true;} if(flagI == true) entradaInvalida("Num");if(flag){ resultadoInvalido(0); }else{ reactToAnswer(correct0(Num) != wrong0(Num),0,"Num: " +Num ); } }
-      function correct0(num){
-      if(num%2==0){
+var lastIndex = 19; function test0(){var flag = false; var flagI = false;  flagI = false;  var carlos = document.getElementById("txtcarlos").value;if (carlos == "") { flag = true; flagI = true;} var carlos = Number(document.getElementById("txtcarlos").value);if (isNaN(carlos) || !Number.isInteger(carlos)) { flag = true; flagI = true;} if(flagI == true) entradaInvalida("carlos"); flagI = false;  var pedro = document.getElementById("txtpedro").value;if (pedro == "") { flag = true; flagI = true;} var pedro = Number(document.getElementById("txtpedro").value);if (isNaN(pedro) || !Number.isInteger(pedro)) { flag = true; flagI = true;} if(flagI == true) entradaInvalida("pedro"); flagI = false;  var welton = document.getElementById("txtwelton").value;if (welton == "") { flag = true; flagI = true;} var welton = Number(document.getElementById("txtwelton").value);if (isNaN(welton) || !Number.isInteger(welton)) { flag = true; flagI = true;} if(flagI == true) entradaInvalida("welton");if(flag){ resultadoInvalido(0); }else{ reactToAnswer(correct0( carlos,  pedro, welton) != wrong0( carlos,  pedro, welton),0,"carlos: "+carlos+"; "+"pedro: "+pedro+"; "+"welton: " +welton ); } }
+      function correct0(carlos, pedro, welton){
+        var cont = 0;
+        if (pedro < carlos) {
+          cont++;
+        }
+        if (welton < carlos) {
+          cont++;
+        }
+        return cont;
+      }
+      function wrong0(carlos, pedro, welton){
+      if (pedro < carlos) {
+        if (welton < carlos){
+          return 2;
+        }
+        return 1;
+      }
       return 0;
-      }else{
-      return 1;
-      }
-      }
-      function wrong0(num){
-      return num;
       }
      function test1(){var flag = false; var flagI = false;  flagI = false;  var age = document.getElementById("txtage").value;if (age == "") { flag = true; flagI = true;} var age = Number(document.getElementById("txtage").value);if (isNaN(age) || !Number.isInteger(age)) { flag = true; flagI = true;} if(flagI == true) entradaInvalida("age");if(flag){ resultadoInvalido(1); }else{ reactToAnswer(correct1(age) != wrong1(age),1,"age: " +age ); } }
       function correct1(age){
