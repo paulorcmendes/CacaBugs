@@ -40,4 +40,25 @@ $(document).ready(function() {
     });
 });
 </script>
+<script type="text/javascript">
+    var totalTime = 0;
+    var start, end;
+    start = new Date().getTime()/1000;
+    $(window).blur(function(e) {    
+        end = new Date().getTime()/1000;
+        totalTime += (end - start);     
+        $("#pedro").html(totalTime);
+    });
+    $(window).focus(function(e) {
+        start = new Date().getTime()/1000;
+    });
+    /*Pegar o tempo da hora do submit e
+    subtrair do úlitmo start
+    Senão - se ele passar todo o tempo sem 
+    mudar de aba, será zero.*/
+
+
+    /*Tipo log:
+    Questão Tipo(open, submit) hora tempo
+</script>
 </html>
