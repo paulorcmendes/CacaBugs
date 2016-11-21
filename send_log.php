@@ -18,7 +18,7 @@ if (!$con) {
 }
 $id_user = $login_session["id"];
 
-$sql = "INSERT INTO log(id_user, isRight, question, entries) values (".$id_user.", ".$right.",".$question.",'".$entries."'); ";
+$sql = "INSERT INTO log(id_user, tipo, isRight, question, entries) values (".$id_user.",\"submit\",".$right.",".$question.",'".$entries."'); ";
 
 if (mysqli_query($con, $sql)) {
     echo "Record inserted successfully";
