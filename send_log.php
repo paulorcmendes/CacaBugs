@@ -12,13 +12,18 @@ $entries = "";
 if(isset($_POST['sendEntries'])){
 	$entries = $_POST['sendEntries'];
 }
+$tipo = "open";
+if(isset($_POST['tipo'])){
+	$tipo = $_POST['tipo'];
+	
+}
 $con = mysqli_connect('localhost','root','','caca_bugs');
 if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
 $id_user = $login_session["id"];
 
-$sql = "INSERT INTO log(id_user, tipo, isRight, question, entries) values (".$id_user.",\"submit\",".$right.",".$question.",'".$entries."'); ";
+$sql = "INSERT INTO log(id_user, tipo, isRight, question, entries) values (".$id_user.",\"".$tipo."\",".$right.",".$question.",'".$entries."'); ";
 
 if (mysqli_query($con, $sql)) {
     echo "Record inserted successfully";
