@@ -173,9 +173,10 @@ function reactToAnswer(result, index, entries){
             para.appendChild(document.createTextNode("Você Passou de Nível!"));
             divCaixaResposta.appendChild(para);
             divCaixaResposta.appendChild(document.createElement("BR"));
-            divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfQuestion("+(index+1)+"); return false;\">Next</a> ";
-            divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfQuestion("+(index)+"); return false;\">Try Again</a> ";
+            
+            //divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfQuestion("+(index)+"); return false;\">Try Again</a> ";
             divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfMenu(); return false;\">Menu</a></div>";
+            divCaixaResposta.innerHTML += "<a href=\"#\" class=\"caixaRespostaButton\" onclick = \"loadHTMLOfQuestion("+(index+1)+"); return false;\">Next Question</a> ";
             divPopup.appendChild(divCaixaResposta);
             //loadHTMLOfQuestion(index+1); 
         }else {
