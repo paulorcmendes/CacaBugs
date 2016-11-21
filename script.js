@@ -18,7 +18,17 @@ function saveLogSubmit(result, index, entries){
     }
     );
 }
-
+function saveLogOpen(index){
+    $.ajax({
+        type: "POST",
+        url: "send_log.php",
+        data:{question: index, tipo: 'open'},
+        success: function(data){
+            console.log(data);
+        }
+    }
+    );
+}
 function getLastQuestion(){
     $.getJSON( "getQuestion.php", function(retorno) {
         for(i = 0; i < retorno.length; i++) {
@@ -86,6 +96,7 @@ function loadHTMLOfQuestion(index) {
     var entry = question.getElementsByTagName("entry");
     var test = question.getElementsByTagName("test")[0].childNodes[0].nodeValue;   
     startTime(); 
+    saveLogOpen(index);
     html += "<input type=\"submit\" class = \"btnMenu\" value=\"Menu\" onclick=\"loadHTMLOfMenu();\">";
     html += "<div class = \"question\">";
     html += "<div class = \"titleQuestion\">Questão "+(index)+"</div>";
