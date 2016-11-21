@@ -15,7 +15,11 @@ if(isset($_POST['sendEntries'])){
 $tipo = "open";
 if(isset($_POST['tipo'])){
 	$tipo = $_POST['tipo'];
-	
+
+}
+$time = 0;
+if(isset($_POST['time'])){
+	$time = $_POST['time'];
 }
 $con = mysqli_connect('localhost','root','','caca_bugs');
 if (!$con) {
@@ -23,7 +27,7 @@ if (!$con) {
 }
 $id_user = $login_session["id"];
 
-$sql = "INSERT INTO log(id_user, tipo, isRight, question, entries) values (".$id_user.",\"".$tipo."\",".$right.",".$question.",'".$entries."'); ";
+$sql = "INSERT INTO log(id_user, tipo, isRight, question, entries, timeSpent) values (".$id_user.",\"".$tipo."\",".$right.",".$question.",'".$entries."',".$time."); ";
 
 if (mysqli_query($con, $sql)) {
     echo "Record inserted successfully";

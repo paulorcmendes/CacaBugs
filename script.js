@@ -1,13 +1,17 @@
 var xmlDoc = loadXMLDoc("question.xml"); 
 var dataBase = xmlDoc.getElementsByTagName("dataBase")[0];
 var atualQuestion = 0;
+var totalTime = 0;
+var start, end;
+
 getLastQuestion();
 
 function saveLogSubmit(result, index, entries){
+    adjustTime();
     $.ajax({
         type: "POST",
         url: "send_log.php",
-        data:{right:result, question: index, sendEntries: entries, tipo: 'submit'},
+        data:{right:result, question: index, sendEntries: entries, tipo: 'submit', time: totalTime},
         success: function(data){
             console.log(data);
         }
@@ -80,7 +84,8 @@ function loadHTMLOfQuestion(index) {
     var description = question.getElementsByTagName("description")[0].childNodes[0].nodeValue;
     var code = question.getElementsByTagName("code");
     var entry = question.getElementsByTagName("entry");
-    var test = question.getElementsByTagName("test")[0].childNodes[0].nodeValue;
+    var test = question.getElementsByTagName("test")[0].childNodes[0].nodeValue;   
+    startTime(); 
     html += "<input type=\"submit\" class = \"btnMenu\" value=\"Menu\" onclick=\"loadHTMLOfMenu();\">";
     html += "<div class = \"question\">";
     html += "<div class = \"titleQuestion\">Questão "+(index)+"</div>";
@@ -217,3 +222,17 @@ function resultadoInvalido(index){
     });
 }
 
+function startTime(){
+    start = new Date().getTime()/1000;
+    totalTime = 0;
+}
+function adjustTime(){
+    totalTime += ((new Date().getTime()/1000)-start);
+}
+$(window).blur(function(e) {    
+    end = new Date().getTime()/1000;
+    totalTime += (end - start);     
+});
+$(window).focus(function(e) {
+    start = new Date().getTime()/1000;
+});
