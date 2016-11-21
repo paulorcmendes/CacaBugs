@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 21-Nov-2016 às 13:53
+-- Generation Time: 21-Nov-2016 às 15:14
 -- Versão do servidor: 10.1.13-MariaDB
 -- PHP Version: 7.0.6
 
@@ -29,12 +29,12 @@ SET time_zone = "+00:00";
 CREATE TABLE `log` (
   `id` int(11) NOT NULL,
   `id_user` int(200) NOT NULL,
-  `tipo` varchar(200) NOT NULL DEFAULT 'open',
+  `tipo` varchar(200) NOT NULL DEFAULT 'undefined',
   `LogDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `isRight` tinyint(1) NOT NULL DEFAULT '0',
   `question` int(11) NOT NULL,
   `entries` varchar(200) NOT NULL,
-  `timeSpent` int(200) NOT NULL DEFAULT '0'
+  `timeSpent` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -56,10 +56,14 @@ INSERT INTO `log` (`id`, `id_user`, `tipo`, `LogDate`, `isRight`, `question`, `e
 (19, 3, 'open', '2016-11-14 11:07:13', 1, 0, 'carlos: 10; pedro: 12; welton: 4', 0),
 (20, 3, 'open', '2016-11-14 12:42:23', 1, 0, 'carlos: 45; pedro: 52; welton: 12', 0),
 (21, 3, 'open', '2016-11-14 13:06:08', 0, 0, 'carlos: 34; pedro: 6; welton: 4', 0),
-(22, 1, 'open', '2016-11-14 16:43:47', 0, 3, 'a: 12; b: 12', 0),
-(23, 3, 'open', '2016-11-14 17:14:08', 1, 0, 'carlos: 10; pedro: 12; welton: 5', 0),
-(24, 1, 'submit', '2016-11-21 09:48:20', 1, 1, 'age: 18', 0),
-(25, 4, 'submit', '2016-11-21 09:52:45', 1, 1, 'age: 18', 0);
+(33, 3, 'open', '2016-11-21 10:17:43', 0, 3, 'a: 23; b: 23', 0),
+(34, 1, 'submit', '2016-11-21 10:19:44', 0, 5, 'a: 23; b: 23; c: 23', 0),
+(35, 1, 'submit', '2016-11-21 10:20:33', 1, 5, 'a: 35; b: 353; c: 35', 0),
+(36, 1, 'submit', '2016-11-21 10:21:16', 0, 6, 'b: 23; h: 23', 0),
+(37, 1, 'submit', '2016-11-21 10:21:21', 1, 6, 'b: 34; h: 2', 0),
+(38, 1, 'submit', '2016-11-21 11:11:24', 1, 6, 'b: 34; h: 23', 3.839),
+(39, 1, 'submit', '2016-11-21 11:11:58', 0, 3, 'a: 34; b: 34', 2.432),
+(40, 1, 'submit', '2016-11-21 11:12:27', 1, 2, 'a: 23; b: 23', 1.933);
 
 -- --------------------------------------------------------
 
@@ -80,8 +84,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `email`, `nome`, `senha`, `question`) VALUES
-(1, 'mendes', 'paulo', '8dc05a2dd9ab9c89fdd980fcea730391', 5),
-(3, 'csalles', 'Carlos de Salles', '419789426eeccf07e77dae48ce291063', 2),
+(1, 'mendes', 'paulo', '8dc05a2dd9ab9c89fdd980fcea730391', 7),
+(3, 'csalles', 'Carlos de Salles', '419789426eeccf07e77dae48ce291063', 3),
 (4, 'pedropva', 'pedro', 'a6c4fc689f874ebf8c957113b1266e22', 2);
 
 --
@@ -108,7 +112,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `log`
 --
 ALTER TABLE `log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 --
 -- AUTO_INCREMENT for table `user`
 --
