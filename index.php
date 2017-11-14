@@ -26,7 +26,7 @@
 	<div id = "divTotal" class="total">
 		
 	</div>
-
+	<p style = "background-color:#333333; color:#FFFFFF; text-align: right;">Developed by: Paulo Renato Conceição Mendes - TeleMídia-MA</p>
 	<div id="overlay-back"></div>
 </body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

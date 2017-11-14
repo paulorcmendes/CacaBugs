@@ -21,18 +21,14 @@ $time = 0;
 if(isset($_POST['time'])){
 	$time = $_POST['time'];
 }
-$con = mysqli_connect('localhost','root','','caca_bugs');
-if (!$con) {
-    die('Could not connect: ' . mysqli_error($con));
-}
 $id_user = $login_session["id"];
 
 $sql = "INSERT INTO log(id_user, tipo, isRight, question, entries, timeSpent) values (".$id_user.",\"".$tipo."\",".$right.",".$question.",'".$entries."',".$time."); ";
 
-if (mysqli_query($con, $sql)) {
+if (mysqli_query($db, $sql)) {
     echo "Record inserted successfully";
 } else {
-    echo "Error updating record: " . mysqli_error($con);
+    echo "Error updating record: " . mysqli_error($db);
 }
 
-mysqli_close($con);
+mysqli_close($db);

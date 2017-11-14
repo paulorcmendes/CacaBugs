@@ -69,7 +69,8 @@
          </div>
          <a class="submit" href="signUp.php">Criar Nova Conta</a>
         </div>
-      </div>   
+      </div> 
+     
 
    </body>
 </html>
