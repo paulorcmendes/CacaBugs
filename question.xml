@@ -58,7 +58,7 @@ int irmaosCarlos(int carlos, int pedro, int welton){
   </question>
   <question>
     <description>
-      O código abaixo deveria retornar se uma pessoa pode dirigir ou não no Brasil. É sabido que uma pessoa pode dirigir se já tiver 18 anos completo.
+      O código abaixo deveria retornar se uma pessoa pode dirigir ou não no Brasil. É sabido que uma pessoa pode dirigir se já tiver 18 anos completos.
     </description>
 
     <code language = 'Lua'>
@@ -150,7 +150,7 @@ int canEnter(int a, int b){
   </question>
   <question>
     <description>
-      O código de informar se há algum par de números entre os informados.
+      O código deve informar se há números repetidos entre os informados.
     </description>
     <code language ='Lua'>
 function pair(a, b, c, d, e)
@@ -180,7 +180,7 @@ int pair(int a, int b, int c, int d, int e){
   </question>
   <question>
     <description>
-      O código deve retornar se os lados dados podem formar um triângulo.
+      O código deve retornar se os lados dados podem formar um triângulo. É sabido que para formar um triângulo, a soma de dois lados quaisquer deve ser maior que o outro lado.
     </description>
     <code language='Lua'>
 function isTriangle(a, b, c)
@@ -207,7 +207,7 @@ int isTriangle(int a, int b, int c){
   </question>
   <question>
     <description>
-      O código de retornar a area de um triangulo de base b e altura h.
+      O código deve retornar a área de um triangulo de base b e altura h.
     </description>
     <code language ='Lua'>
 function area(b, h)
@@ -243,7 +243,7 @@ float area(int b, int h){
     </test>
   </question>
   <question>
-    <description>O código deve retornar qual dos números é o maior.</description>
+    <description>O código deve retornar qual dos números informados é o maior.</description>
     <code language ='Lua'>
 function maxPair(a, b)
   if a&gt;b then
@@ -312,7 +312,7 @@ int min(int a, int b){
     </test>
   </question>
   <question>
-    <description>Na TV por assinatura Laws TV possui 998 canais, que vão do canal 2 ao canal 999. Os canais payperview da Laws TV são os canais múltiplos de 11 (Ex: 22, 44, 121). O código deve retornar se um dado número é ou não o número de um canal payperview.</description>
+    <description>A TV por assinatura TeleMídia TV possui 998 canais, que vão do canal 2 ao canal 999. Os canais payperview da TeleMídia TV são os canais múltiplos de 11 (Ex: 22, 44, 121). O código deve retornar se um dado número é ou não o número de um canal payperview da TeleMídia TV.</description>
     <code language ='Lua'>
 function payperview(channel)
   flag = channel&gt;1 and channel&lt;1000
@@ -498,7 +498,7 @@ int countOdds(int a, int b){
   </question>
   <question>
     <description>
-      Dados três números, o código retorna se eles formam ou não uma progressão geométrica.
+      Dados três números, o código deve retornar se eles formam ou não uma progressão geométrica.
     </description>
 
     <code language ='Lua'>
@@ -632,7 +632,7 @@ int countCosmos(char *a, char *b,char *c){
   </question>
   <question>
     <description>
-      A função retorna as raízes de uma equação do segundo grau.
+      A função deve retornar as raízes x1 e x2 de uma equação do segundo grau.
     </description>
   
     <code language ='Lua'>
@@ -687,7 +687,7 @@ float * equation(float a,float b,float c){
   </question>
   <question>
     <description>
-      O código abaixo deve retornar 'a' elevado a 'b'.
+      O código abaixo deve retornar o primeiro número elevado ao segundo(A elevado a B).
     </description>
     
     <code language = 'Lua'>

@@ -39,7 +39,7 @@
       <div class = "logo">
         <a href=""><img class = "imgLogo" src="logo.png"></a>
         <a href="https://telemidiaufma.slack.com"><img class = "parceiro" src="parceiro.png"></a>
-
+        <div style = "border-radius: 8px; background-color:#669999; color:#FFFFFF; text-align: left; width: 50%; font-size: 90%; padding: 1%; perspective: relative; font-family:Arial;">Developed by: Paulo Renato Conceição Mendes</div>
       </div>  
       <div id = "divTotal" class="total">
         <div align = "center">
@@ -69,7 +69,7 @@
             </div>
         
          </div>
-      
+        <a class="submit" href="login.php">Página de Login</a>
         </div>
       </div>	   
 
