@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06-Nov-2017 às 21:57
--- Versão do servidor: 10.1.28-MariaDB
--- PHP Version: 7.1.10
+-- Generation Time: Nov 15, 2017 at 04:30 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `log`
+-- Table structure for table `log`
 --
 
 CREATE TABLE `log` (
@@ -40,19 +40,16 @@ CREATE TABLE `log` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `log`
+-- Dumping data for table `log`
 --
 
 INSERT INTO `log` (`id`, `id_user`, `tipo`, `LogDate`, `isRight`, `question`, `entries`, `timeSpent`) VALUES
-
-(78, 9, 'submit', '2017-11-06 15:36:34', 1, 0, 'carlos: 30; pedro: 45; welton: 12', 10.976),
-(79, 3, 'open', '2017-11-06 17:45:39', 0, 8, '', 0),
-(80, 3, 'submit', '2017-11-06 17:46:16', 1, 8, 'a: 5; b: 5', 37.146);
+(1, 1, 'open', '2017-11-15 12:29:05', 0, 6, '', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -64,12 +61,14 @@ CREATE TABLE `user` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `email`, `nome`, `senha`, `question`) VALUES
-(1, 'mendes', 'paulo', '8dc05a2dd9ab9c89fdd980fcea730391', 9),
-(3, 'csalles', 'Carlos de Salles', '419789426eeccf07e77dae48ce291063', 20);
+(1, 'mendes', 'paulo', '8dc05a2dd9ab9c89fdd980fcea730391', 10),
+(3, 'csalles', 'Carlos de Salles', '419789426eeccf07e77dae48ce291063', 20),
+(4, 'cvmcosta', 'cvmcosta', 'ae06df13134b03bac30033dd12b2e5dc', 0),
+(5, 'pedropva', 'pedropva', 'a6c4fc689f874ebf8c957113b1266e22', 0);
 
 --
 -- Indexes for dumped tables
@@ -97,13 +96,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `log`
 --
 ALTER TABLE `log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
