@@ -23,7 +23,7 @@
          
          header("location: index.php");
       }else {
-         $error = "Your Email or Password is invalid";
+         $error = "Seu email ou senha são inválidos.";
       }
    }
 ?>

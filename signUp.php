@@ -19,10 +19,10 @@
           }
         }
         else{
-          $error = "Passords do not match";
+          $error = "As senhas devem ser iguais!";
         }
       }else{
-        $error = "Insert a valid email!";
+        $error = "Insira um nome de usuário válido!";
       }
    }
 ?>
